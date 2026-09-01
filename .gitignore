@@ -16,8 +16,11 @@ expo-env.d.ts
 *.key
 *.mobileprovision
 
-ios/
-android/
+# Generated native projects (keep modules/btc-alarm/android tracked)
+/ios/
+/android/
+modules/btc-alarm/android/build/
+modules/btc-alarm/android/.cxx/
 
 # Metro
 .metro-health-check*

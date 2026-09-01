@@ -1,0 +1,54 @@
+# If this file exists, EAS uses it instead of .gitignore.
+# Keep in sync with .gitignore, then add extra upload-only excludes.
+
+# dependencies
+node_modules/
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# Native secrets / signing
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Generated native projects (EAS runs prebuild on the worker).
+# Leading slash so modules/btc-alarm/android is still uploaded.
+/android
+/ios
+
+# Local Gradle output for the Expo module (source stays included)
+modules/btc-alarm/android/build/
+modules/btc-alarm/android/.cxx/
+
+# Metro
+.metro-health-check*
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS
+.DS_Store
+*.pem
+
+# local env files
+.env*.local
+
+# typescript
+*.tsbuildinfo
+
+# sound fetch temp (bundled mp3s in ngu/ngd stay included)
+assets/sounds/.tmp/
+
+# Python
+__pycache__/
+*.pyc
