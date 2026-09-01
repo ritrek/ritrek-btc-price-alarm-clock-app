@@ -73,7 +73,10 @@
       "typedRoutes": true
     },
     "extra": {
-      "router": {}
+      "router": {},
+      "eas": {
+        "projectId": "55aea0ba-a091-474b-9dd2-9f6d0ddacea8"
+      }
     },
     "owner": "ritrek",
     "runtimeVersion": {
