@@ -1,0 +1,10 @@
+{
+  "name": "image-size",
+  "version": "2.1.1",
+  "private": true,
+  "description": "Patched image-size (image-size-next) with Metro's 1.x callable CJS export",
+  "main": "index.js",
+  "dependencies": {
+    "image-size-next": "2.1.1"
+  }
+}

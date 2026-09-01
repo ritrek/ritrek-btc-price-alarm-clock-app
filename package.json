@@ -52,7 +52,15 @@
     "eslint": "^9.39.2",
     "eslint-config-expo": "~9.2.0",
     "expo-doctor": "^1.17.14",
+    "image-size": "file:./overrides/image-size",
     "license-checker": "^25.0.1",
     "typescript": "~5.8.3"
+  },
+  "overrides": {
+    "ajv": "8.20.0",
+    "decode-uri-component": "0.5.0",
+    "image-size": "$image-size",
+    "postcss": "8.5.26",
+    "uuid": "11.1.1"
   }
 }
