@@ -1,5 +1,5 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
-import { AppState, Platform } from 'react-native';
+import { AppState } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { router } from 'expo-router';
 
@@ -44,13 +44,6 @@ function normalizeSettings(settings: AppSettings): AppSettings {
   };
 }
 
-const defaultPermissions: AlarmPermissions = {
-  canScheduleExactAlarms: false,
-  canUseFullScreenIntent: false,
-  notificationsGranted: false,
-  ignoringBatteryOptimizations: false,
-};
-
 const CLOCK_FORMAT_KEY = 'clock_format';
 
 const AppContext = createContext<AppContextValue | null>(null);
@@ -70,9 +63,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const [alarms, setAlarms] = useState<Alarm[]>([]);
   const [settings, setSettings] = useState<AppSettings>(defaultSettings);
   const [userSounds, setUserSounds] = useState<UserSound[]>([]);
-  const [permissions, setPermissions] = useState<AlarmPermissions | null>(
-    Platform.OS === 'android' ? null : defaultPermissions
-  );
+  const [permissions, setPermissions] = useState<AlarmPermissions | null>(null);
   const [clockFormat, setClockFormatState] = useState<ClockFormat>('system');
 
   const refresh = useCallback(async () => {

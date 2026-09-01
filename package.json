@@ -14,10 +14,15 @@
     "lint": "expo lint && tsc --noEmit",
     "doctor": "expo-doctor",
     "run:android": "expo run:android",
+    "device:lan:enable": "adb tcpip 5555 && sleep 2 && echo \"device ip: $(adb shell ip route | awk '{print $NF}')\"",
+    "device:lan:disable": "adb usb && adb disconnect",
+    "device:logs": "f(){ adb connect $1 && adb logcat '*:S' ReactNative:V ReactNativeJS:V; }; f",
     "build:android:dev": "npx eas-cli build --platform android --profile development",
+    "build:android:apk": "npx eas-cli build --platform android --profile apk",
     "build:android:preview": "npx eas-cli build --platform android --profile preview",
-    "build:android:production": "npx eas-cli build --platform android --profile production",
-    "ios": "expo run:ios"
+    "build:android:production": "npx eas-cli build --platform android --profile production --clear-cache",
+    "submit:android:preview": "npx eas-cli submit --platform android --profile preview",
+    "submit:android:production": "npx eas-cli submit --platform android --profile production"
   },
   "dependencies": {
     "@expo/vector-icons": "^14.1.0",

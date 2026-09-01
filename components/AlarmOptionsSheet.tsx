@@ -1,5 +1,5 @@
 import DateTimePicker, { DateTimePickerEvent } from '@react-native-community/datetimepicker';
-import { Modal, Platform, Pressable, ScrollView, StyleSheet, View, Alert } from 'react-native';
+import { Modal, Pressable, ScrollView, StyleSheet, View, Alert } from 'react-native';
 import { router } from 'expo-router';
 import { useCallback, useEffect, useState } from 'react';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -51,8 +51,7 @@ export default function AlarmOptionsSheet({ alarm, visible, onClose, openTimePic
     if (!openTimePicker) {
       return;
     }
-    const delay = Platform.OS === 'android' ? 250 : 0;
-    const id = setTimeout(() => setShowPicker(true), delay);
+    const id = setTimeout(() => setShowPicker(true), 250);
     return () => clearTimeout(id);
   }, [visible, openTimePicker]);
 
@@ -85,26 +84,19 @@ export default function AlarmOptionsSheet({ alarm, visible, onClose, openTimePic
   );
 
   const handleClose = useCallback(() => {
-    if (Platform.OS === 'ios') {
-      persistTime(hour, minute);
-    }
     setShowPicker(false);
     onClose();
-  }, [hour, minute, onClose, persistTime]);
+  }, [onClose]);
 
   const onTimeChange = useCallback(
     (event: DateTimePickerEvent, date?: Date) => {
-      if (Platform.OS === 'android') {
-        setShowPicker(false);
-      }
+      setShowPicker(false);
       if (event.type === 'dismissed' || !date) {
         return;
       }
       setHour(date.getHours());
       setMinute(date.getMinutes());
-      if (Platform.OS === 'android') {
-        persistTime(date.getHours(), date.getMinutes());
-      }
+      persistTime(date.getHours(), date.getMinutes());
     },
     [persistTime]
   );
@@ -136,7 +128,7 @@ export default function AlarmOptionsSheet({ alarm, visible, onClose, openTimePic
             contentContainerStyle={styles.sheetContent}
           >
             <Pressable
-              onPress={() => setShowPicker((open) => (Platform.OS === 'ios' ? !open : true))}
+              onPress={() => setShowPicker(true)}
               accessibilityLabel="Change time"
             >
               <ThemedText style={styles.time}>
@@ -148,7 +140,7 @@ export default function AlarmOptionsSheet({ alarm, visible, onClose, openTimePic
               <DateTimePicker
                 value={timeValue}
                 mode="time"
-                display={Platform.OS === 'ios' ? 'spinner' : 'default'}
+                display="default"
                 is24Hour={uses24Hour}
                 onChange={onTimeChange}
               />

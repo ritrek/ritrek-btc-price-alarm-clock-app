@@ -5,7 +5,7 @@ Android alarm clock that wakes you with music based on whether Bitcoin went **up
 - **Number Go Up** music if BTC/USD rose
 - **Number Go Down** music otherwise (including equal or missing price)
 
-Built by [RITREK](https://ritrek.com). Application ID: `com.ritrek.btcpricealarmclock`.
+Built by [RITREK](https://ritrek.com). Application ID: `com.ritrek.btcpricealarmclock`. Android only — iOS cannot run a reliable alarm clock like this.
 
 This is **not** an Expo Go app. Alarms use a native Android module (`modules/btc-alarm`) so you need a development build (`expo run:android` or EAS).
 
@@ -114,11 +114,14 @@ assets/sounds/       Bundled NGU / NGD MP3s
 
 ```bash
 npm run build:android:dev          # EAS development client
-npm run build:android:preview      # internal / draft AAB
+npm run build:android:apk          # sideloadable APK (no Play listing)
+npm run build:android:preview      # Play internal / draft AAB
 npm run build:android:production   # production AAB
+npm run submit:android:preview     # upload latest preview AAB to Play internal (draft)
+npm run submit:android:production  # upload latest production AAB to Play production (draft)
 ```
 
-Profiles live in `eas.json`.
+Profiles live in `eas.json`. Submit needs a Play Console app and a Google service account linked in EAS; skip it until those exist.
 
 ## Related
 

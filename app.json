@@ -2,6 +2,7 @@
   "expo": {
     "name": "BTC Alarm Clock",
     "slug": "btc-price-alarm-clock",
+    "platforms": ["android"],
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "btcpricealarmclock",

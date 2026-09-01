@@ -1,7 +1,7 @@
 import DateTimePicker, { DateTimePickerEvent } from '@react-native-community/datetimepicker';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { Alert, Platform, Pressable, ScrollView, StyleSheet, View } from 'react-native';
+import { Alert, Pressable, ScrollView, StyleSheet, View } from 'react-native';
 
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
@@ -47,7 +47,7 @@ export default function AlarmEditorScreen() {
   const [saving, setSaving] = useState(false);
   // Android's DateTimePicker is a dialog. Keep it mounted only while open,
   // otherwise every re-render (e.g. toggling a weekday) opens it again.
-  const [showPicker, setShowPicker] = useState(Platform.OS === 'ios');
+  const [showPicker, setShowPicker] = useState(false);
 
   useEffect(() => {
     if (existing) {
@@ -61,9 +61,7 @@ export default function AlarmEditorScreen() {
   }, [existing]);
 
   const onTimeChange = useCallback((event: DateTimePickerEvent, date?: Date) => {
-    if (Platform.OS === 'android') {
-      setShowPicker(false);
-    }
+    setShowPicker(false);
     if (event.type === 'dismissed' || !date) {
       return;
     }
@@ -107,19 +105,17 @@ export default function AlarmEditorScreen() {
     <ThemedView style={styles.container}>
       <ScrollView contentContainerStyle={styles.content}>
         <ThemedText style={{ color: muted, textAlign: 'center' }}>Local time</ThemedText>
-        {Platform.OS === 'android' ? (
-          <Pressable onPress={() => setShowPicker(true)} style={styles.timeTap} accessibilityLabel="Change time">
-            <ThemedText style={styles.timeDisplay}>
-              {formatAlarmTime(time.getHours(), time.getMinutes(), uses24Hour)}
-            </ThemedText>
-            <ThemedText style={{ color: muted, textAlign: 'center' }}>Tap to change</ThemedText>
-          </Pressable>
-        ) : null}
+        <Pressable onPress={() => setShowPicker(true)} style={styles.timeTap} accessibilityLabel="Change time">
+          <ThemedText style={styles.timeDisplay}>
+            {formatAlarmTime(time.getHours(), time.getMinutes(), uses24Hour)}
+          </ThemedText>
+          <ThemedText style={{ color: muted, textAlign: 'center' }}>Tap to change</ThemedText>
+        </Pressable>
         {showPicker ? (
           <DateTimePicker
             value={time}
             mode="time"
-            display={Platform.OS === 'ios' ? 'spinner' : 'default'}
+            display="default"
             is24Hour={uses24Hour}
             onChange={onTimeChange}
           />
