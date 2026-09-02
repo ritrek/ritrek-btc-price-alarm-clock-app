@@ -184,7 +184,7 @@ export default function HomeScreen() {
         )}
         ListFooterComponent={
           <View style={styles.priceFooter}>
-            <ThemedText style={[styles.empty, { color: muted }]}>
+            <ThemedText style={[styles.empty, { color: muted, fontWeight: 'bold' }]}>
               {btcUsd != null
                 ? `Current price: ${formatUsd(Math.round(btcUsd))}`
                 : 'Current price: …'}
