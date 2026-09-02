@@ -30,6 +30,7 @@ class AlarmRingingService : Service() {
       setReferenceCounted(false)
       acquire(30 * 60 * 1000L)
     }
+    PriceSpeech.warmup(this)
   }
 
   override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
@@ -108,6 +109,7 @@ class AlarmRingingService : Service() {
           return@thread
         }
         AlarmStore.setHandoff(this, handoff)
+        result.current?.let { PriceSpeech.prepare(this, it) }
         startRinging(soundId, settings.vibrationEnabled)
         val nm = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
         nm.notify(NOTIFICATION_ID, buildNotification(alarm.id, if (result.mood == "ngu") "Bitcoin is up" else "Bitcoin is down"))

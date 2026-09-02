@@ -75,6 +75,8 @@ class BtcAlarmModule : Module() {
 
     AsyncFunction("snooze") { id: String ->
       val alarm = AlarmStore.getAlarm(context, id) ?: return@AsyncFunction null
+      PriceSpeech.cancel()
+      PriceSpeech.release()
       AlarmRingingService.stop(context)
       AlarmPlayer.stop()
       val minutes = AlarmStore.getSettings(context).snoozeMinutes
@@ -87,7 +89,7 @@ class BtcAlarmModule : Module() {
 
     AsyncFunction("stopAlarm") { id: String ->
       val handoff = AlarmStore.getHandoff(context)
-      AlarmDismissal.finish(context, id, haltRinging = true)
+      AlarmDismissal.finish(context, id, haltRinging = true, speakPrice = true)
       handoff?.takeIf { it.alarmId == id }?.toMap()
     }
 

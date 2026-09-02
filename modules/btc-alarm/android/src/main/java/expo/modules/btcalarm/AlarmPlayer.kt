@@ -36,6 +36,45 @@ object AlarmPlayer {
     player = mediaPlayer
   }
 
+  fun playOnce(context: Context, uri: Uri, onComplete: () -> Unit) {
+    stop()
+    try {
+      val mediaPlayer = MediaPlayer()
+      mediaPlayer.setAudioAttributes(
+        AudioAttributes.Builder()
+          .setUsage(AudioAttributes.USAGE_ALARM)
+          .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
+          .build()
+      )
+      mediaPlayer.setDataSource(context, uri)
+      mediaPlayer.isLooping = false
+      mediaPlayer.setWakeMode(context, android.os.PowerManager.PARTIAL_WAKE_LOCK)
+      val audioManager = context.getSystemService(Context.AUDIO_SERVICE) as AudioManager
+      val max = audioManager.getStreamMaxVolume(AudioManager.STREAM_ALARM)
+      if (max > 0) {
+        val current = audioManager.getStreamVolume(AudioManager.STREAM_ALARM)
+        if (current == 0) {
+          audioManager.setStreamVolume(AudioManager.STREAM_ALARM, (max * 0.8).toInt().coerceAtLeast(1), 0)
+        }
+      }
+      mediaPlayer.setOnCompletionListener {
+        stop()
+        onComplete()
+      }
+      mediaPlayer.setOnErrorListener { _, _, _ ->
+        stop()
+        onComplete()
+        true
+      }
+      mediaPlayer.prepare()
+      mediaPlayer.start()
+      player = mediaPlayer
+    } catch (_: Exception) {
+      stop()
+      onComplete()
+    }
+  }
+
   fun stop() {
     AlarmVibrator.stop()
     try {

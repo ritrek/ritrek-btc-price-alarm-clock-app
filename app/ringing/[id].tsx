@@ -11,7 +11,6 @@ import { useThemeColor } from '@/hooks/useThemeColor';
 import { BtcAlarm } from '@/modules/btc-alarm/src';
 import { RingingHandoff } from '@/types';
 import { formatUsd } from '@/utils/price';
-import { speakBitcoinPrice } from '@/utils/speech';
 import { formatAlarmTime } from '@/utils/format';
 
 export default function RingingScreen() {
@@ -55,17 +54,13 @@ export default function RingingScreen() {
     setBusy(true);
     try {
       await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-      const stopped = await BtcAlarm.stopAlarm(id);
-      const price = stopped?.currentPriceUsd ?? handoff?.currentPriceUsd;
+      await BtcAlarm.stopAlarm(id);
       await refresh();
-      if (typeof price === 'number') {
-        await speakBitcoinPrice(price);
-      }
       router.replace('/');
     } finally {
       setBusy(false);
     }
-  }, [id, busy, handoff, refresh]);
+  }, [id, busy, refresh]);
 
   const mood = handoff?.mood ?? 'ngd';
   const isUp = mood === 'ngu';
