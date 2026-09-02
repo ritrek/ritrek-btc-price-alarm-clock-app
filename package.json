@@ -22,12 +22,15 @@
     "build:android:preview": "npx eas-cli build --platform android --profile preview",
     "build:android:production": "npx eas-cli build --platform android --profile production --clear-cache",
     "submit:android:preview": "npx eas-cli submit --platform android --profile preview",
-    "submit:android:production": "npx eas-cli submit --platform android --profile production"
+    "submit:android:production": "npx eas-cli submit --platform android --profile production",
+    "update:android:preview": "npx eas-cli update --platform android --branch preview --environment preview",
+    "update:android:production": "npx eas-cli update --platform android --branch production --environment production"
   },
   "dependencies": {
     "@expo/vector-icons": "^14.1.0",
     "@react-native-async-storage/async-storage": "2.1.2",
     "@react-native-community/datetimepicker": "8.4.1",
+    "btc-alarm": "file:./modules/btc-alarm",
     "expo": "~53.0.27",
     "expo-av": "~15.1.7",
     "expo-build-properties": "~0.14.8",
@@ -43,13 +46,13 @@
     "expo-splash-screen": "~0.30.10",
     "expo-status-bar": "~2.2.3",
     "expo-system-ui": "~5.0.11",
+    "expo-updates": "~0.28.18",
     "react": "19.0.0",
     "react-native": "0.79.6",
     "react-native-gesture-handler": "~2.24.0",
     "react-native-reanimated": "~3.17.4",
     "react-native-safe-area-context": "5.4.0",
-    "react-native-screens": "~4.11.1",
-    "btc-alarm": "file:./modules/btc-alarm"
+    "react-native-screens": "~4.11.1"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
@@ -71,7 +74,10 @@
   "expo": {
     "doctor": {
       "reactNativeDirectoryCheck": {
-        "exclude": ["btc-alarm", "expo-av"],
+        "exclude": [
+          "btc-alarm",
+          "expo-av"
+        ],
         "listUnknownPackages": false
       }
     }

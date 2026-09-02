@@ -84,6 +84,10 @@
     "owner": "ritrek",
     "runtimeVersion": {
       "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/55aea0ba-a091-474b-9dd2-9f6d0ddacea8",
+      "checkAutomatically": "NEVER"
     }
   }
 }

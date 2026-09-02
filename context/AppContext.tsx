@@ -1,7 +1,7 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
-import { AppState } from 'react-native';
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { AppState, AppStateStatus } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { router } from 'expo-router';
+import { router, usePathname } from 'expo-router';
 
 import { DEFAULT_NGU_SOUND_ID, DEFAULT_NGD_SOUND_ID, DEFAULT_SNOOZE_MINUTES, DEFAULT_LOOKBACK_HOURS, LOOKBACK_HOURS, SNOOZE_OPTIONS } from '@/constants/Sounds';
 import { BtcAlarm } from '@/modules/btc-alarm/src';
@@ -9,6 +9,7 @@ import { Alarm, AlarmPermissions, AppSettings, ClockFormat, RingingHandoff, User
 import { noteLiveBtcUsd } from '@/utils/price';
 import { compareAlarms, enableIfAlarmEdited, normalizeAlarm, withCreatedAt } from '@/utils/alarm';
 import { uses24HourClock } from '@/utils/format';
+import { syncOtaUpdates } from '@/utils/otaUpdates';
 
 interface AppContextValue {
   ready: boolean;
@@ -52,17 +53,34 @@ const CLOCK_FORMAT_KEY = 'clock_format';
 
 const AppContext = createContext<AppContextValue | null>(null);
 
-async function routeToHandoff() {
+async function routeToHandoff(): Promise<boolean> {
   if (!BtcAlarm.isAvailable) {
-    return;
+    return false;
   }
   const handoff = await BtcAlarm.getPendingHandoff();
   if (handoff?.alarmId) {
     router.replace(`/ringing/${handoff.alarmId}`);
+    return true;
   }
+  return false;
+}
+
+async function syncOtaIfDirectOpen(isRinging: boolean) {
+  if (isRinging) {
+    return;
+  }
+  const alarmWake = await routeToHandoff();
+  if (alarmWake) {
+    return;
+  }
+  await syncOtaUpdates();
 }
 
 export function AppProvider({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  const isRingingRef = useRef(pathname.startsWith('/ringing'));
+  isRingingRef.current = pathname.startsWith('/ringing');
+  const appStateRef = useRef<AppStateStatus>(AppState.currentState);
   const [ready, setReady] = useState(false);
   const [alarms, setAlarms] = useState<Alarm[]>([]);
   const [settings, setSettings] = useState<AppSettings>(defaultSettings);
@@ -157,13 +175,19 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       refresh();
     });
     const appState = AppState.addEventListener('change', (state) => {
+      const fromBackground = appStateRef.current === 'background';
+      appStateRef.current = state;
       if (state === 'active') {
         refresh();
         refreshPermissions();
-        routeToHandoff().catch(() => undefined);
+        if (fromBackground) {
+          syncOtaIfDirectOpen(isRingingRef.current).catch(() => undefined);
+        } else {
+          routeToHandoff().catch(() => undefined);
+        }
       }
     });
-    routeToHandoff().catch(() => undefined);
+    syncOtaIfDirectOpen(isRingingRef.current).catch(() => undefined);
     AsyncStorage.getItem('asked_onboarding').catch(() => undefined);
     return () => {
       fired.remove();
