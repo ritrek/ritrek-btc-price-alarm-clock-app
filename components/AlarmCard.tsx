@@ -122,6 +122,16 @@ export default function AlarmCard({ alarm, onToggle }: Props) {
     opacity: translateX.value < -8 ? 1 : 0,
   }));
 
+  const openSheet = () => {
+    setOpenTimePicker(false);
+    setSheetOpen(true);
+  };
+
+  const openSheetWithTime = () => {
+    setOpenTimePicker(true);
+    setSheetOpen(true);
+  };
+
   return (
     <>
       <View
@@ -146,49 +156,28 @@ export default function AlarmCard({ alarm, onToggle }: Props) {
             style={[styles.card, { backgroundColor: card }, cardMotion]}
           >
             <View style={styles.cardTop}>
-              <View style={[styles.main, { opacity: effectsEnabled ? 1 : 0.55 }]}>
-                <PressableView
-                  onPress={() => {
-                    setOpenTimePicker(false);
-                    setSheetOpen(true);
-                  }}
-                  accessibilityLabel="Alarm options"
-                >
-                  <ThemedText style={[styles.when, { color: muted }]}>{nextOccurrenceLabel(displayAlarm)}</ThemedText>
-                </PressableView>
+              <PressableView
+                onPress={openSheet}
+                style={[styles.main, { opacity: effectsEnabled ? 1 : 0.55 }]}
+                accessibilityLabel="Alarm options"
+              >
+                <ThemedText style={[styles.when, { color: muted }]}>{nextOccurrenceLabel(displayAlarm)}</ThemedText>
                 <View style={styles.timeRow}>
-                  <Pressable
-                    onPress={() => {
-                      setOpenTimePicker(true);
-                      setSheetOpen(true);
-                    }}
-                    accessibilityLabel="Change alarm time"
-                  >
+                  <Pressable onPress={openSheetWithTime} accessibilityLabel="Change alarm time">
                     <ThemedText style={styles.time}>{parts.time}</ThemedText>
                   </Pressable>
                   {parts.period ? (
-                    <Pressable
-                      onPress={() => {
-                        setOpenTimePicker(false);
-                        setSheetOpen(true);
-                      }}
-                      accessibilityLabel="Alarm options"
-                    >
-                      <ThemedText style={[styles.period, { color: muted }]}>{parts.period}</ThemedText>
-                    </Pressable>
+                    <ThemedText style={[styles.period, { color: muted }]}>{parts.period}</ThemedText>
                   ) : null}
                 </View>
-              </View>
+              </PressableView>
               <View style={styles.switchWrap}>
                 <Switch value={switchOn} onValueChange={handleToggle} />
               </View>
             </View>
             {alarm.mode !== 'once' || alarm.nguSoundId || alarm.ngdSoundId ? (
               <PressableView
-                onPress={() => {
-                  setOpenTimePicker(false);
-                  setSheetOpen(true);
-                }}
+                onPress={openSheet}
                 style={[styles.details, { opacity: effectsEnabled ? 1 : 0.55 }]}
                 accessibilityLabel="Alarm options"
               >
@@ -210,7 +199,8 @@ export default function AlarmCard({ alarm, onToggle }: Props) {
               </PressableView>
             ) : null}
             {snoozeRemaining != null ? (
-              <View
+              <PressableView
+                onPress={openSheet}
                 style={styles.snoozeRow}
                 accessibilityLabel={`Snoozed, ${formatSnoozeCountdown(snoozeRemaining)} remaining`}
               >
@@ -218,7 +208,7 @@ export default function AlarmCard({ alarm, onToggle }: Props) {
                 <ThemedText style={[styles.when, { color: muted }]}>
                   {formatSnoozeCountdown(snoozeRemaining)}
                 </ThemedText>
-              </View>
+              </PressableView>
             ) : null}
           </Animated.View>
         </GestureDetector>
