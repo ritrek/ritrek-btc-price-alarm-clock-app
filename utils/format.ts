@@ -61,6 +61,16 @@ export function formatAlarmTime(hour: number, minute: number, use24Hour = true):
   return parts.period ? `${parts.time} ${parts.period}` : parts.time;
 }
 
+export function subtractHoursFromAlarmTime(
+  hour: number,
+  minute: number,
+  hours: number
+): { hour: number; minute: number } {
+  const dayMinutes = 24 * 60;
+  const wrapped = (((hour * 60 + minute - hours * 60) % dayMinutes) + dayMinutes) % dayMinutes;
+  return { hour: Math.floor(wrapped / 60), minute: wrapped % 60 };
+}
+
 export function nextOccurrenceLabel(alarm: Alarm, from = Date.now()): string {
   const at = nextTriggerMillis(alarm, from);
   if (at == null) {

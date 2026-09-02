@@ -10,7 +10,8 @@ import { ThemedText } from '@/components/ThemedText';
 import { useApp } from '@/context/AppContext';
 import { useThemeColor } from '@/hooks/useThemeColor';
 import { Alarm } from '@/types';
-import { formatAlarmTimeParts, nextOccurrenceLabel } from '@/utils/format';
+import { formatAlarmTime, formatAlarmTimeParts, nextOccurrenceLabel, subtractHoursFromAlarmTime } from '@/utils/format';
+import { formatUsd } from '@/utils/price';
 import { formatSnoozeCountdown, useSnoozeRemaining } from '@/utils/snooze';
 import { soundTitle } from '@/utils/sounds';
 
@@ -24,7 +25,7 @@ interface Props {
 }
 
 export default function AlarmCard({ alarm, onToggle }: Props) {
-  const { uses24Hour, deleteAlarm, userSounds } = useApp();
+  const { uses24Hour, deleteAlarm, userSounds, settings } = useApp();
   const card = useThemeColor({}, 'card');
   const muted = useThemeColor({}, 'muted');
   const errorBg = useThemeColor({}, 'errorBackground');
@@ -132,6 +133,21 @@ export default function AlarmCard({ alarm, onToggle }: Props) {
     setSheetOpen(true);
   };
 
+  const comparisonLine = (() => {
+    if (alarm.mode === 'once') {
+      if (!effectsEnabled || alarm.baselinePriceUsd == null) {
+        return null;
+      }
+      return `The price at alarm time will be compared to ${formatUsd(alarm.baselinePriceUsd)}.`;
+    }
+    const compareAt = subtractHoursFromAlarmTime(
+      alarm.hour,
+      alarm.minute,
+      settings.comparisonLookbackHours
+    );
+    return `The price at alarm time will be compared to the price at ${formatAlarmTime(compareAt.hour, compareAt.minute, uses24Hour)}.`;
+  })();
+
   return (
     <>
       <View
@@ -196,6 +212,15 @@ export default function AlarmCard({ alarm, onToggle }: Props) {
                     Number Go Down Sound · {soundTitle(alarm.ngdSoundId, userSounds)}
                   </ThemedText>
                 ) : null}
+              </PressableView>
+            ) : null}
+            {comparisonLine ? (
+              <PressableView
+                onPress={openSheet}
+                style={[styles.comparison, { opacity: effectsEnabled ? 1 : 0.55 }]}
+                accessibilityLabel="Alarm options"
+              >
+                <ThemedText style={[styles.detail, { color: muted }]}>{comparisonLine}</ThemedText>
               </PressableView>
             ) : null}
             {snoozeRemaining != null ? (
@@ -265,6 +290,7 @@ const styles = StyleSheet.create({
   period: { fontSize: 18, fontWeight: '600', lineHeight: 28, marginBottom: 4 },
   snoozeRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   details: { gap: 2, paddingTop: 4 },
+  comparison: { paddingTop: 4 },
   detail: { fontSize: 14, lineHeight: 20 },
   switchWrap: {
     flexShrink: 0,
