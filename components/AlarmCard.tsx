@@ -7,6 +7,7 @@ import Animated, { runOnJS, useAnimatedStyle, useSharedValue, withSpring, withTi
 import AlarmOptionsSheet from '@/components/AlarmOptionsSheet';
 import PressableView from '@/components/PressableView';
 import { ThemedText } from '@/components/ThemedText';
+import WeekdayPicker from '@/components/WeekdayPicker';
 import { useApp } from '@/context/AppContext';
 import { useThemeColor } from '@/hooks/useThemeColor';
 import { Alarm } from '@/types';
@@ -197,10 +198,10 @@ export default function AlarmCard({ alarm, onToggle }: Props) {
                 style={[styles.details, { opacity: effectsEnabled ? 1 : 0.55 }]}
                 accessibilityLabel="Alarm options"
               >
-                {alarm.mode !== 'once' ? (
-                  <ThemedText style={[styles.detail, { color: muted }]}>
-                    {alarm.mode === 'daily' ? 'Every day' : 'Custom days'}
-                  </ThemedText>
+                {alarm.mode === 'daily' ? (
+                  <ThemedText style={[styles.detail, { color: muted }]}>Every day</ThemedText>
+                ) : alarm.mode === 'custom' ? (
+                  <WeekdayPicker selected={alarm.days} compact />
                 ) : null}
                 {alarm.nguSoundId ? (
                   <ThemedText style={[styles.detail, { color: muted }]} numberOfLines={1}>
