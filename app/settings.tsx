@@ -1,5 +1,6 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { router } from 'expo-router';
+import Constants from 'expo-constants';
 import { useCallback, useEffect, useState } from 'react';
 import { Alert, Appearance, Modal, Pressable, ScrollView, StyleSheet, Switch, View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -107,6 +108,12 @@ export default function SettingsScreen() {
         </Pressable>
 
         <ThemedText type="subtitle">About</ThemedText>
+        <View style={[styles.row, { backgroundColor: card }]}>
+          <ThemedText>Version</ThemedText>
+          <ThemedText style={{ color: muted }}>
+            {Constants.expoConfig?.version ?? '—'}
+          </ThemedText>
+        </View>
         <Pressable
           style={[styles.row, { backgroundColor: card }]}
           onPress={() => router.push('/licenses')}
