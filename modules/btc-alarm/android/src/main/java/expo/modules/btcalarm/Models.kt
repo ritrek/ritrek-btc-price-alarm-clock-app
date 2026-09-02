@@ -208,6 +208,7 @@ data class AppSettingsRecord(
   val defaultNgdSoundId: String,
   val snoozeMinutes: Int = 5,
   val vibrationEnabled: Boolean = true,
+  val comparisonLookbackHours: Int = 8,
 ) {
   fun toJson(): JSONObject {
     val json = JSONObject()
@@ -215,6 +216,7 @@ data class AppSettingsRecord(
     json.put("defaultNgdSoundId", defaultNgdSoundId)
     json.put("snoozeMinutes", snoozeMinutes)
     json.put("vibrationEnabled", vibrationEnabled)
+    json.put("comparisonLookbackHours", comparisonLookbackHours)
     return json
   }
 
@@ -223,6 +225,7 @@ data class AppSettingsRecord(
     "defaultNgdSoundId" to defaultNgdSoundId,
     "snoozeMinutes" to snoozeMinutes,
     "vibrationEnabled" to vibrationEnabled,
+    "comparisonLookbackHours" to comparisonLookbackHours,
   )
 
   companion object {
@@ -230,6 +233,9 @@ data class AppSettingsRecord(
 
     fun normalizeSnooze(minutes: Int): Int =
       if (minutes in SNOOZE_OPTIONS) minutes else 5
+
+    fun normalizeLookback(hours: Int): Int =
+      if (hours in 4..10) hours else 8
 
     private fun parseVibrationEnabled(raw: Any?): Boolean =
       when (raw) {
@@ -247,6 +253,7 @@ data class AppSettingsRecord(
       } else {
         json.optBoolean("vibrationEnabled", true)
       },
+      comparisonLookbackHours = normalizeLookback(json.optInt("comparisonLookbackHours", 8)),
     )
 
     fun fromMap(map: Map<String, Any?>) = AppSettingsRecord(
@@ -254,6 +261,7 @@ data class AppSettingsRecord(
       defaultNgdSoundId = map.soundId("defaultNgdSoundId", "defaultSadSoundId") ?: DEFAULT_NGD_SOUND_ID,
       snoozeMinutes = normalizeSnooze((map["snoozeMinutes"] as? Number)?.toInt() ?: 5),
       vibrationEnabled = parseVibrationEnabled(map["vibrationEnabled"]),
+      comparisonLookbackHours = normalizeLookback((map["comparisonLookbackHours"] as? Number)?.toInt() ?: 8),
     )
   }
 }

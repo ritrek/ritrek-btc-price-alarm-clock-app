@@ -172,6 +172,8 @@ export const DEFAULT_NGU_SOUND_ID = NGU_SOUNDS[0].id;
 export const DEFAULT_NGD_SOUND_ID = NGD_SOUNDS[0].id;
 export const SNOOZE_OPTIONS = [1, 2, 3, 5, 10, 15, 20, 30];
 export const DEFAULT_SNOOZE_MINUTES = 5;
+export const LOOKBACK_HOURS = [4, 5, 6, 7, 8, 9, 10];
+export const DEFAULT_LOOKBACK_HOURS = 8;
 
 export function getBundledSound(id: string): BundledSound | undefined {
   return ALL_BUNDLED_SOUNDS.find((sound) => sound.id === id);

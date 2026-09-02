@@ -255,7 +255,7 @@ private fun resolveMood(context: Context, alarm: AlarmRecord): MoodResult {
     alarm.baselinePriceUsd
   } else {
     try {
-      PriceFetcher.hoursAgo(8).usd
+      PriceFetcher.hoursAgo(AlarmStore.getSettings(context).comparisonLookbackHours).usd
     } catch (_: Exception) {
       usedCache = true
       alarm.baselinePriceUsd

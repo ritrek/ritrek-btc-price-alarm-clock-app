@@ -21,6 +21,7 @@ export interface AppSettings {
   defaultNgdSoundId: string;
   snoozeMinutes: number;
   vibrationEnabled: boolean;
+  comparisonLookbackHours: number;
 }
 
 export type ClockFormat = 'system' | '12h' | '24h';

@@ -8,12 +8,16 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { ClockFormat } from '@/types';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import { SNOOZE_OPTIONS } from '@/constants/Sounds';
+import { LOOKBACK_HOURS, SNOOZE_OPTIONS } from '@/constants/Sounds';
 import { useApp } from '@/context/AppContext';
 import { useThemeColor } from '@/hooks/useThemeColor';
 
 function snoozeLabel(minutes: number) {
   return `${minutes} minute${minutes === 1 ? '' : 's'}`;
+}
+
+function lookbackLabel(hours: number) {
+  return `${hours} hours earlier`;
 }
 
 export default function SettingsScreen() {
@@ -23,6 +27,7 @@ export default function SettingsScreen() {
   const tint = useThemeColor({}, 'tint');
   const [theme, setTheme] = useState<'light' | 'dark' | 'system'>('system');
   const [snoozeOpen, setSnoozeOpen] = useState(false);
+  const [lookbackOpen, setLookbackOpen] = useState(false);
 
   useEffect(() => {
     AsyncStorage.getItem('color_theme').then((value) => {
@@ -95,6 +100,22 @@ export default function SettingsScreen() {
           />
         </View>
 
+        <ThemedText type="subtitle">Repeating alarms</ThemedText>
+        <ThemedText style={{ color: muted }}>
+          When a repeating alarm rings, compare Bitcoin’s price to the price from:
+        </ThemedText>
+        <Pressable
+          style={[styles.row, styles.snoozeTrigger, { backgroundColor: card }]}
+          onPress={() => setLookbackOpen(true)}
+          accessibilityRole="button"
+          accessibilityLabel="Comparison lookback"
+        >
+          <ThemedText>{lookbackLabel(settings.comparisonLookbackHours)}</ThemedText>
+          <View style={styles.snoozeChevron} pointerEvents="none">
+            <Ionicons name="chevron-down" size={18} color={muted} />
+          </View>
+        </Pressable>
+
         <ThemedText type="subtitle">Permissions</ThemedText>
         <Pressable
           style={[styles.row, { backgroundColor: card }]}
@@ -165,6 +186,55 @@ export default function SettingsScreen() {
             <Pressable
               style={styles.dialogCancel}
               onPress={() => setSnoozeOpen(false)}
+              accessibilityRole="button"
+              accessibilityLabel="Cancel"
+            >
+              <ThemedText type="link">Cancel</ThemedText>
+            </Pressable>
+          </View>
+        </View>
+      </Modal>
+
+      <Modal
+        visible={lookbackOpen}
+        transparent
+        animationType="fade"
+        statusBarTranslucent
+        onRequestClose={() => setLookbackOpen(false)}
+      >
+        <View style={styles.dialogOverlay}>
+          <Pressable style={StyleSheet.absoluteFill} onPress={() => setLookbackOpen(false)} />
+          <View style={[styles.dialog, { backgroundColor: card }]} accessibilityViewIsModal>
+            <ThemedText type="subtitle" style={styles.dialogTitle}>
+              Compare to the price from
+            </ThemedText>
+            {LOOKBACK_HOURS.map((hours) => {
+              const selected = settings.comparisonLookbackHours === hours;
+              return (
+                <Pressable
+                  key={hours}
+                  style={styles.dialogOption}
+                  onPress={() => {
+                    void saveSettings({ ...settings, comparisonLookbackHours: hours });
+                    setLookbackOpen(false);
+                  }}
+                  accessibilityRole="radio"
+                  accessibilityState={{ selected }}
+                >
+                  <Ionicons
+                    name={selected ? 'radio-button-on' : 'radio-button-off'}
+                    size={22}
+                    color={selected ? tint : muted}
+                  />
+                  <ThemedText style={selected ? { color: tint, fontWeight: '600' } : undefined}>
+                    {lookbackLabel(hours)}
+                  </ThemedText>
+                </Pressable>
+              );
+            })}
+            <Pressable
+              style={styles.dialogCancel}
+              onPress={() => setLookbackOpen(false)}
               accessibilityRole="button"
               accessibilityLabel="Cancel"
             >

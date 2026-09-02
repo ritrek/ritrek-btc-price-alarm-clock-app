@@ -25,7 +25,7 @@ export default function AlarmEditorScreen() {
     hour?: string;
     minute?: string;
   }>();
-  const { alarms, saveAlarm, uses24Hour } = useApp();
+  const { alarms, saveAlarm, uses24Hour, settings } = useApp();
   const existing = alarms.find((alarm) => alarm.id === id);
   const tint = useThemeColor({}, 'tint');
   const onTint = useThemeColor({}, 'onTint');
@@ -152,7 +152,8 @@ export default function AlarmEditorScreen() {
           </ThemedText>
         ) : (
           <ThemedText style={{ color: muted }}>
-            Repeating alarms compare the live price to the price from 8 hours earlier.
+            Repeating alarms compare the live price to the price from {settings.comparisonLookbackHours} hours
+            earlier.
           </ThemedText>
         )}
         <Pressable

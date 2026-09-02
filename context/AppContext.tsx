@@ -3,7 +3,7 @@ import { AppState } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { router } from 'expo-router';
 
-import { DEFAULT_NGU_SOUND_ID, DEFAULT_NGD_SOUND_ID, DEFAULT_SNOOZE_MINUTES, SNOOZE_OPTIONS } from '@/constants/Sounds';
+import { DEFAULT_NGU_SOUND_ID, DEFAULT_NGD_SOUND_ID, DEFAULT_SNOOZE_MINUTES, DEFAULT_LOOKBACK_HOURS, LOOKBACK_HOURS, SNOOZE_OPTIONS } from '@/constants/Sounds';
 import { BtcAlarm } from '@/modules/btc-alarm/src';
 import { Alarm, AlarmPermissions, AppSettings, ClockFormat, RingingHandoff, UserSound } from '@/types';
 import { noteLiveBtcUsd } from '@/utils/price';
@@ -31,6 +31,7 @@ const defaultSettings: AppSettings = {
   defaultNgdSoundId: DEFAULT_NGD_SOUND_ID,
   snoozeMinutes: DEFAULT_SNOOZE_MINUTES,
   vibrationEnabled: true,
+  comparisonLookbackHours: DEFAULT_LOOKBACK_HOURS,
 };
 
 function normalizeSettings(settings: AppSettings): AppSettings {
@@ -41,6 +42,9 @@ function normalizeSettings(settings: AppSettings): AppSettings {
       ? settings.snoozeMinutes
       : DEFAULT_SNOOZE_MINUTES,
     vibrationEnabled: settings.vibrationEnabled !== false,
+    comparisonLookbackHours: LOOKBACK_HOURS.includes(settings.comparisonLookbackHours)
+      ? settings.comparisonLookbackHours
+      : DEFAULT_LOOKBACK_HOURS,
   };
 }
 
