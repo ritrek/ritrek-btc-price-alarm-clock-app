@@ -19,6 +19,7 @@
         "monochromeImage": "./assets/images/monochrome-icon.png"
       },
       "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
       "package": "com.ritrek.btcpricealarmclock",
       "permissions": [
         "android.permission.INTERNET",
@@ -68,7 +69,8 @@
           }
         }
       ],
-      "./modules/btc-alarm/app.plugin.js"
+      "./modules/btc-alarm/app.plugin.js",
+      "./plugins/withDisablePredictiveBack.js"
     ],
     "experiments": {
       "typedRoutes": true
