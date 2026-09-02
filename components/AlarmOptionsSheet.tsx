@@ -2,6 +2,8 @@ import DateTimePicker, { DateTimePickerEvent } from '@react-native-community/dat
 import { Modal, Pressable, ScrollView, StyleSheet, View, Alert } from 'react-native';
 import { router } from 'expo-router';
 import { useCallback, useEffect, useState } from 'react';
+import { Gesture, GestureDetector, GestureHandlerRootView } from 'react-native-gesture-handler';
+import Animated, { runOnJS, useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { ThemedText } from '@/components/ThemedText';
@@ -18,6 +20,9 @@ const MODES: { id: RepeatMode; label: string }[] = [
   { id: 'daily', label: 'Every day' },
   { id: 'custom', label: 'Custom days' },
 ];
+
+const DISMISS_DISTANCE = 80;
+const DISMISS_VELOCITY = 800;
 
 interface Props {
   alarm: Alarm;
@@ -37,6 +42,7 @@ export default function AlarmOptionsSheet({ alarm, visible, onClose, openTimePic
   const [showPicker, setShowPicker] = useState(false);
   const [hour, setHour] = useState(alarm.hour);
   const [minute, setMinute] = useState(alarm.minute);
+  const translateY = useSharedValue(0);
 
   useEffect(() => {
     setHour(alarm.hour);
@@ -88,6 +94,30 @@ export default function AlarmOptionsSheet({ alarm, visible, onClose, openTimePic
     onClose();
   }, [onClose]);
 
+  useEffect(() => {
+    if (visible) {
+      translateY.value = 0;
+    }
+  }, [translateY, visible]);
+
+  const pan = Gesture.Pan()
+    .activeOffsetY([16, 1_000])
+    .failOffsetX([-32, 32])
+    .onUpdate((event) => {
+      translateY.value = Math.max(0, event.translationY);
+    })
+    .onEnd((event) => {
+      if (event.translationY > DISMISS_DISTANCE || event.velocityY > DISMISS_VELOCITY) {
+        runOnJS(handleClose)();
+      } else {
+        translateY.value = withSpring(0, { damping: 20, stiffness: 220 });
+      }
+    });
+
+  const sheetMotion = useAnimatedStyle(() => ({
+    transform: [{ translateY: translateY.value }],
+  }));
+
   const onTimeChange = useCallback(
     (event: DateTimePickerEvent, date?: Date) => {
       setShowPicker(false);
@@ -118,11 +148,21 @@ export default function AlarmOptionsSheet({ alarm, visible, onClose, openTimePic
 
   return (
     <Modal visible={visible} animationType="slide" transparent onRequestClose={handleClose}>
+      <GestureHandlerRootView style={styles.modalRoot}>
       <View style={styles.backdrop}>
         <Pressable style={StyleSheet.absoluteFill} onPress={handleClose} accessibilityLabel="Dismiss" />
-        <View style={[styles.sheet, { backgroundColor: card, paddingBottom: Math.max(insets.bottom, 16) }]}>
-          <View style={[styles.handle, { backgroundColor: muted }]} />
-          <ScrollView
+        <GestureDetector gesture={pan}>
+          <Animated.View
+            style={[
+              styles.sheet,
+              sheetMotion,
+              { backgroundColor: card, paddingBottom: Math.max(insets.bottom, 16) },
+            ]}
+          >
+            <View style={styles.handleHit} accessibilityLabel="Swipe down to dismiss">
+              <View style={[styles.handle, { backgroundColor: muted }]} />
+            </View>
+            <ScrollView
             keyboardShouldPersistTaps="handled"
             bounces={false}
             contentContainerStyle={styles.sheetContent}
@@ -197,14 +237,17 @@ export default function AlarmOptionsSheet({ alarm, visible, onClose, openTimePic
             >
               <ThemedText style={{ color: '#c62828' }}>Delete</ThemedText>
             </Pressable>
-          </ScrollView>
-        </View>
+            </ScrollView>
+          </Animated.View>
+        </GestureDetector>
       </View>
+      </GestureHandlerRootView>
     </Modal>
   );
 }
 
 const styles = StyleSheet.create({
+  modalRoot: { flex: 1 },
   backdrop: {
     flex: 1,
     justifyContent: 'flex-end',
@@ -218,12 +261,15 @@ const styles = StyleSheet.create({
     maxHeight: '90%',
   },
   sheetContent: { gap: 12, paddingBottom: 8 },
+  handleHit: {
+    alignItems: 'center',
+    paddingTop: 4,
+    paddingBottom: 12,
+  },
   handle: {
-    alignSelf: 'center',
     width: 36,
     height: 4,
     borderRadius: 2,
-    marginBottom: 12,
     opacity: 0.4,
   },
   time: { fontSize: 32, fontWeight: '700', lineHeight: 38 },
