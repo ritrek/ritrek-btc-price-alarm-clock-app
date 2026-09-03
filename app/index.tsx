@@ -128,6 +128,20 @@ export default function HomeScreen() {
         contentContainerStyle={alarms.length === 0 ? styles.emptyList : styles.list}
         ListHeaderComponent={
           <View style={styles.header}>
+            <View>
+              <ThemedText style={[styles.headerPrice, { color: muted, fontWeight: 'bold' }]}>
+                {btcUsd != null
+                  ? `Current BTC price: ${formatUsd(Math.round(btcUsd))}`
+                  : 'Current BTC price: …'}
+              </ThemedText>
+              <ThemedText style={[styles.attribution, { color: muted }]}>
+                Price data is collected from{' '}
+                <ThemedText type="link" onPress={() => void Linking.openURL('https://kraken.com')}>
+                  Kraken.com
+                </ThemedText>
+                .
+              </ThemedText>
+            </View>
             <ThemedText type="subtitle">Default sounds</ThemedText>
             <Pressable
               style={[styles.soundRow, { backgroundColor: card }]}
@@ -184,18 +198,6 @@ export default function HomeScreen() {
         )}
         ListFooterComponent={
           <View style={styles.priceFooter}>
-            <ThemedText style={[styles.empty, { color: muted, fontWeight: 'bold' }]}>
-              {btcUsd != null
-                ? `Current price: ${formatUsd(Math.round(btcUsd))}`
-                : 'Current price: …'}
-            </ThemedText>
-            <ThemedText style={[styles.attribution, { color: muted }]}>
-              Price data is collected from{' '}
-              <ThemedText type="link" onPress={() => void Linking.openURL('https://kraken.com')}>
-                Kraken.com
-              </ThemedText>
-              .
-            </ThemedText>
             <View style={styles.about}>
               <ThemedText style={[styles.attribution, { color: muted }]}>
                 Developed by{' '}
@@ -250,6 +252,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1 },
   header: { gap: 10, marginBottom: 8 },
+  headerPrice: { textAlign: 'center' },
   soundRow: {
     borderRadius: 14,
     padding: 16,
