@@ -52,3 +52,6 @@ assets/sounds/.tmp/
 # Python
 __pycache__/
 *.pyc
+
+# Play Store listing art (keep in git, do not upload to EAS / ship in the APK)
+/store/

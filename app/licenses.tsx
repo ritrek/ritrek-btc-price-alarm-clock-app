@@ -108,7 +108,7 @@ export default function LicensesScreen() {
   const renderListHeader = useCallback(
     () => (
       <View style={[styles.card, { backgroundColor }]}>
-        <Text style={[styles.cardTitle, { color: textColor }]}>Dependencies Licenses</Text>
+        <Text style={[styles.cardTitle, { color: textColor }]}>Dependencies licenses</Text>
         <Text style={[styles.description, { color: textColor }]}>
           This app uses the following dependency packages. Tap on any dependency to view its license.
         </Text>
@@ -200,7 +200,7 @@ export default function LicensesScreen() {
                 {selectedLicense.licenseText ? (
                   <View style={[styles.modalLicenseCard, { backgroundColor: cardColor }]}>
                     <Text style={[styles.modalLicenseTitle, { color: textColor }]}>
-                      License Text
+                      License text
                     </Text>
                     <ScrollView
                       style={styles.licenseTextScrollView}
