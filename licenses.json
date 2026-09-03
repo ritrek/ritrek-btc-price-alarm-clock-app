@@ -2061,12 +2061,6 @@
     },
     {
       "licenses": "MIT",
-      "repository": "https://github.com/fsevents/fsevents",
-      "licenseTextHash": "2a8a5d6197bb97a0",
-      "packageKey": "fsevents@2.3.3"
-    },
-    {
-      "licenses": "MIT",
       "repository": "https://github.com/Raynos/function-bind",
       "licenseTextHash": "773e131a76847260",
       "packageKey": "function-bind@1.1.2"
@@ -2440,7 +2434,13 @@
       "licenses": "MPL-2.0",
       "repository": "https://github.com/parcel-bundler/lightningcss",
       "licenseTextHash": "5eba353fe5076ac3",
-      "packageKey": "lightningcss-darwin-x64@1.27.0"
+      "packageKey": "lightningcss-linux-x64-gnu@1.27.0"
+    },
+    {
+      "licenses": "MPL-2.0",
+      "repository": "https://github.com/parcel-bundler/lightningcss",
+      "licenseTextHash": "5eba353fe5076ac3",
+      "packageKey": "lightningcss-linux-x64-musl@1.27.0"
     },
     {
       "licenses": "MPL-2.0",
@@ -4019,10 +4019,6 @@
     [
       "29de249ac0cee0d5",
       "MIT License\n\nCopyright (c) 2023 Satyajit Sahoo\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
-    ],
-    [
-      "2a8a5d6197bb97a0",
-      "MIT License\n-----------\n\nCopyright (C) 2010-2020 by Philipp Dunkel, Ben Noordhuis, Elan Shankar, Paul Miller\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
     ],
     [
       "2b29dcfe0d6471f7",
