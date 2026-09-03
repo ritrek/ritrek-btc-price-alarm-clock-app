@@ -146,7 +146,11 @@ export default function AlarmCard({ alarm, onToggle }: Props) {
       alarm.minute,
       settings.comparisonLookbackHours
     );
-    return `The price at alarm time will be compared to the price at ${formatAlarmTime(compareAt.hour, compareAt.minute, uses24Hour)}.`;
+    const compareTime = formatAlarmTime(compareAt.hour, compareAt.minute, uses24Hour).replaceAll(
+      ' ',
+      '\u00A0'
+    );
+    return `The price at alarm time will be compared to the price at ${compareTime}.`;
   })();
 
   return (
