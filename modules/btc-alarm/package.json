@@ -2,5 +2,7 @@
   "name": "btc-alarm",
   "version": "1.0.0",
   "private": true,
+  "license": "MIT",
+  "author": "RITREK Ltd.",
   "main": "src/index.ts"
 }

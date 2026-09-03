@@ -3,8 +3,8 @@
   "main": "expo-router/entry",
   "version": "1.0.0",
   "private": true,
-  "license": "UNLICENSED",
-  "author": "RITREK Ltd",
+  "license": "MIT",
+  "author": "RITREK Ltd.",
   "scripts": {
     "build-licenses": "node scripts/build-licenses.js",
     "start": "expo start",

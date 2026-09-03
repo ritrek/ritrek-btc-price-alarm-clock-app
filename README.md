@@ -127,4 +127,8 @@ Profiles live in `eas.json`. Submit needs a Play Console app and a Google servic
 
 [RITREK](https://ritrek.com) also makes a [Timelock Recovery Android app](https://play.google.com/store/apps/details?id=com.ritrek.app) for pre-signed Bitcoin recovery plans.
 
-The app source is proprietary (`UNLICENSED`). Bundled recordings keep the licenses listed in [LICENSES.md](LICENSES.md).
+## License
+
+Copyright (c) 2026 [RITREK Ltd.](https://ritrek.com)
+
+The source code is licensed under the [MIT License](LICENSE). Bundled alarm recordings keep the licenses listed in [LICENSES.md](LICENSES.md).

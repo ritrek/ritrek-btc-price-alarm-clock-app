@@ -1,5 +1,7 @@
 # Bundled alarm recordings
 
+Software in this repository is MIT (see [LICENSE](LICENSE)). This file covers the bundled MP3s only.
+
 Compositions are in the public domain. Each **recording** is a Wikimedia Commons file that is public domain, CC0, U.S. government work, or CC BY-SA (attribution below). Files are the full source recording (converted to 128 kbps MP3). William Tell starts at the finale of the Marine Band overture and runs to the end.
 
 ## NGU

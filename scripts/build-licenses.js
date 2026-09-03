@@ -81,6 +81,16 @@ try {
   });
 
   const rawData = JSON.parse(output);
+  // Local packages (private: true). license-checker reports those as UNLICENSED even when
+  // package.json says MIT, so keep them off the in-app third-party list.
+  const firstPartyNames = new Set(['btc-price-alarm-clock', 'btc-alarm', 'image-size']);
+  for (const packageKey of Object.keys(rawData)) {
+    const at = packageKey.lastIndexOf('@');
+    const packageName = at > 0 ? packageKey.slice(0, at) : packageKey;
+    if (firstPartyNames.has(packageName)) {
+      delete rawData[packageKey];
+    }
+  }
   console.info(`Found ${Object.keys(rawData).length} packages`);
 
   console.info('Processing license data...');

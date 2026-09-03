@@ -2,6 +2,7 @@
   "name": "image-size",
   "version": "2.1.1",
   "private": true,
+  "license": "MIT",
   "description": "Patched image-size (image-size-next) with Metro 1.x path/buffer CJS API",
   "main": "index.js",
   "dependencies": {

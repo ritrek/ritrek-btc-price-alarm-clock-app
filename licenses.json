@@ -1105,12 +1105,6 @@
       "licenses": "MIT",
       "repository": "https://github.com/ajv-validator/ajv",
       "licenseTextHash": "a05350a88e318e4f",
-      "packageKey": "ajv@8.11.0"
-    },
-    {
-      "licenses": "MIT",
-      "repository": "https://github.com/ajv-validator/ajv",
-      "licenseTextHash": "a05350a88e318e4f",
       "packageKey": "ajv@8.20.0"
     },
     {
@@ -1178,6 +1172,12 @@
       "repository": "https://github.com/micromatch/anymatch",
       "licenseTextHash": "5a3b0007c4203f10",
       "packageKey": "anymatch@3.1.3"
+    },
+    {
+      "licenses": "MIT",
+      "repository": "https://github.com/zeit/arg",
+      "licenseTextHash": "44320c3fc9f3678c",
+      "packageKey": "arg@4.1.0"
     },
     {
       "licenses": "MIT",
@@ -1358,14 +1358,6 @@
       "repository": "https://github.com/facebook/watchman",
       "licenseTextHash": "fbc3054ed9e51cce",
       "packageKey": "bser@2.1.1"
-    },
-    {
-      "licenses": "UNLICENSED",
-      "packageKey": "btc-alarm@1.0.0"
-    },
-    {
-      "licenses": "UNLICENSED",
-      "packageKey": "btc-price-alarm-clock@1.0.0"
     },
     {
       "licenses": "MIT",
@@ -1633,7 +1625,7 @@
       "licenses": "MIT",
       "repository": "https://github.com/SamVerschueren/decode-uri-component",
       "licenseTextHash": "ed7a9a0f74e43951",
-      "packageKey": "decode-uri-component@0.2.2"
+      "packageKey": "decode-uri-component@0.5.0"
     },
     {
       "licenses": "MIT",
@@ -1860,6 +1852,12 @@
     {
       "licenses": "MIT",
       "repository": "https://github.com/expo/expo",
+      "licenseTextHash": "3b09d916f09b453d",
+      "packageKey": "expo-eas-client@0.14.4"
+    },
+    {
+      "licenses": "MIT",
+      "repository": "https://github.com/expo/expo",
       "licenseTextHash": "cc6bb233c41e81b2",
       "packageKey": "expo-file-system@18.1.11"
     },
@@ -1938,6 +1936,12 @@
     {
       "licenses": "MIT",
       "repository": "https://github.com/expo/expo",
+      "licenseTextHash": "99c6a673a34eabe2",
+      "packageKey": "expo-structured-headers@4.1.0"
+    },
+    {
+      "licenses": "MIT",
+      "repository": "https://github.com/expo/expo",
       "licenseTextHash": "b8618a83ae274f87",
       "packageKey": "expo-system-ui@5.0.11"
     },
@@ -1946,6 +1950,12 @@
       "repository": "https://github.com/expo/expo",
       "licenseTextHash": "46352e3638d461e8",
       "packageKey": "expo-updates-interface@1.1.0"
+    },
+    {
+      "licenses": "MIT",
+      "repository": "https://github.com/expo/expo",
+      "licenseTextHash": "b83b83f23caca2fe",
+      "packageKey": "expo-updates@0.28.18"
     },
     {
       "licenses": "MIT",
@@ -2180,12 +2190,6 @@
       "repository": "https://github.com/kaelzhang/node-ignore",
       "licenseTextHash": "9c94db23dc4b1e9a",
       "packageKey": "ignore@5.3.2"
-    },
-    {
-      "licenses": "MIT",
-      "repository": "https://github.com/image-size/image-size",
-      "licenseTextHash": "3109783dad7527b4",
-      "packageKey": "image-size@1.2.1"
     },
     {
       "licenses": "MIT",
@@ -2937,8 +2941,8 @@
     {
       "licenses": "MIT",
       "repository": "https://github.com/postcss/postcss",
-      "licenseTextHash": "c4630ac8b89cb317",
-      "packageKey": "postcss@8.4.49"
+      "licenseTextHash": "5be1f3465bba68a6",
+      "packageKey": "postcss@8.5.26"
     },
     {
       "licenses": "MIT",
@@ -2993,12 +2997,6 @@
       "repository": "https://github.com/sindresorhus/query-string",
       "licenseTextHash": "846c2349412e40c3",
       "packageKey": "query-string@7.1.3"
-    },
-    {
-      "licenses": "MIT",
-      "repository": "https://github.com/jessetane/queue",
-      "licenseTextHash": "38d7c4d8410c68ee",
-      "packageKey": "queue@6.0.2"
     },
     {
       "licenses": "MIT",
@@ -3653,12 +3651,6 @@
       "packageKey": "update-browserslist-db@1.3.2"
     },
     {
-      "licenses": "BSD-2-Clause",
-      "repository": "https://github.com/garycourt/uri-js",
-      "licenseTextHash": "0af366eff4c01ec1",
-      "packageKey": "uri-js@4.4.1"
-    },
-    {
       "licenses": "MIT",
       "repository": "https://github.com/satya164/use-latest-callback",
       "licenseTextHash": "29de249ac0cee0d5",
@@ -3679,8 +3671,8 @@
     {
       "licenses": "MIT",
       "repository": "https://github.com/uuidjs/uuid",
-      "licenseTextHash": "3df5f9a382da026c",
-      "packageKey": "uuid@7.0.3"
+      "licenseTextHash": "beaa6b04fb82e41d",
+      "packageKey": "uuid@11.1.1"
     },
     {
       "licenses": "ISC",
@@ -3881,10 +3873,6 @@
       "Zero-Clause BSD\n=============\n\nPermission to use, copy, modify, and/or distribute this software for\nany purpose with or without fee is hereby granted.\n\nTHE SOFTWARE IS PROVIDED “AS IS” AND THE AUTHOR DISCLAIMS ALL\nWARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES\nOF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE\nFOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY\nDAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN\nAN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT\nOF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE."
     ],
     [
-      "0af366eff4c01ec1",
-      "Copyright 2011 Gary Court. All rights reserved.\n\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\n1.\tRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\n\n2.\tRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\n\nTHIS SOFTWARE IS PROVIDED BY GARY COURT \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL GARY COURT OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\nThe views and conclusions contained in the software and documentation are those of the authors and should not be interpreted as representing official policies, either expressed or implied, of Gary Court.\n"
-    ],
-    [
       "0b67e6903ba2f4d0",
       "# @react-native/codegen\n\n[![Version][version-badge]][package]\n\n## Installation\n\n```\nyarn add --dev @react-native/codegen\n```\n\n*Note: We're using `yarn` to install deps. Feel free to change commands to use `npm` 3+ and `npx` if you like*\n\n[version-badge]: https://img.shields.io/npm/v/@react-native/codegen?style=flat-square\n[package]: https://www.npmjs.com/package/@react-native/codegen\n\n## Testing\n\nTo run the tests in this package, run the following commands from the React Native root folder:\n\n1. `yarn` to install the dependencies. You just need to run this once\n2. `yarn jest packages/react-native-codegen`.\n"
     ],
@@ -4077,10 +4065,6 @@
       "The MIT License (MIT)\n\nCopyright (c) Luke Edwards <luke.edwards05@gmail.com> (lukeed.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
     ],
     [
-      "3109783dad7527b4",
-      "The MIT License (MIT)\n\nCopyright © 2013-Present Aditya Yadav, http://netroy.in\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
-    ],
-    [
       "31e43f5bdab3d56d",
       "# expo-constants\n\nProvides system information that remains constant throughout the lifetime of your app.\n\n# API documentation\n\n- [Documentation for the latest stable release](https://docs.expo.dev/versions/latest/sdk/constants/)\n- [Documentation for the main branch](https://docs.expo.dev/versions/unversioned/sdk/constants/)\n\n# Installation in managed Expo projects\n\nFor [managed](https://docs.expo.dev/archive/managed-vs-bare/) Expo projects, please follow the installation instructions in the [API documentation for the latest stable release](https://docs.expo.dev/versions/latest/sdk/constants/).\n\n# Installation in bare React Native projects\n\nFor bare React Native projects, you must ensure that you have [installed and configured the `expo` package](https://docs.expo.dev/bare/installing-expo-modules/) before continuing.\n\n### Add the package to your npm dependencies\n\n```\nnpx expo install expo-constants\n```\n\n# Contributing\n\nContributions are very welcome! Please refer to guidelines described in the [contributing guide](https://github.com/expo/expo#contributing).\n"
     ],
@@ -4117,16 +4101,16 @@
       "Copyright (c) 2016, Scott Motte\nAll rights reserved.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n\n* Redistributions of source code must retain the above copyright notice, this\n  list of conditions and the following disclaimer.\n\n* Redistributions in binary form must reproduce the above copyright notice,\n  this list of conditions and the following disclaimer in the documentation\n  and/or other materials provided with the distribution.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\"\nAND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\nIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE\nFOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR\nSERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER\nCAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,\nOR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\nOF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n"
     ],
     [
-      "38d7c4d8410c68ee",
-      "The MIT License (MIT)\nCopyright (c) 2014 Jesse Tane <jesse.tane@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
-    ],
-    [
       "3a61c6c96caf5c1d",
       "(The MIT License)\n\nCopyright (c) 2014-2017 TJ Holowaychuk <tj@vision-media.ca>\nCopyright (c) 2018-2021 Josh Junon\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software\nand associated documentation files (the 'Software'), to deal in the Software without restriction,\nincluding without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,\nand/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial\nportions of the Software.\n\nTHE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT\nLIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,\nWHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\n"
     ],
     [
       "3a7d3bb198e909ed",
       "The MIT License (MIT)\n\nCopyright (c) 2014 Evan Wallace\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+    ],
+    [
+      "3b09d916f09b453d",
+      "# expo-eas-client\n\nInformation related to EAS.\n\n## Client ID Discussion\n\nStable client identifier for EAS services.\n\nOn iOS, this is stored in NSUserDefaults which is persisted and backed up. Upon restore (set up new iOS device for example), the identifier should be the same.\n\nOn Android, this is stored in SharedPreferences. By default since Android 6, SharedPreferences are backed up automatically via Auto Backup, though some devices or apps may not (for example, if `android:allowBackup=\"true\"` is not specified in AndroidManifest.xml).\n\n## Contributing\n\nContributions are very welcome! Please refer to guidelines described in the [contributing guide](https://github.com/expo/expo#contributing).\n\n"
     ],
     [
       "3bdd8ad524e991a3",
@@ -4139,10 +4123,6 @@
     [
       "3de284c8e6fa7e84",
       "The MIT License (MIT)\n\nCopyright (c) 2011 Einar Otto Stangvik <einaros@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
-    ],
-    [
-      "3df5f9a382da026c",
-      "The MIT License (MIT)\n\nCopyright (c) 2010-2016 Robert Kieffer and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
     ],
     [
       "3eb38220845acc7e",
@@ -4183,6 +4163,10 @@
     [
       "435a6722c786b0a5",
       "This software is released under the MIT license:\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+    ],
+    [
+      "44320c3fc9f3678c",
+      "MIT License\n\nCopyright (c) 2017 Zeit, Inc.\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
     ],
     [
       "4491517f7deb68d0",
@@ -4303,6 +4287,10 @@
     [
       "5b8a867ac027eaa0",
       "Copyright (c) 2016, Istanbul Code Coverage\nAll rights reserved.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n\n* Redistributions of source code must retain the above copyright notice, this\n  list of conditions and the following disclaimer.\n\n* Redistributions in binary form must reproduce the above copyright notice,\n  this list of conditions and the following disclaimer in the documentation\n  and/or other materials provided with the distribution.\n\n* Neither the name of babel-plugin-istanbul nor the names of its\n  contributors may be used to endorse or promote products derived from\n  this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\"\nAND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\nIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE\nFOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR\nSERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER\nCAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,\nOR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\nOF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n"
+    ],
+    [
+      "5be1f3465bba68a6",
+      "The MIT License (MIT)\n\nCopyright 2013 Andrey Sitnik <andrey@sitnik.es>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
     ],
     [
       "5c496ce5ae47eb8e",
@@ -4657,6 +4645,10 @@
       "(The MIT License)\n\nCopyright (c) 2010 Sencha Inc.\nCopyright (c) 2011 LearnBoost\nCopyright (c) 2011-2014 TJ Holowaychuk\nCopyright (c) 2015 Douglas Christopher Wilson\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n'Software'), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
     ],
     [
+      "99c6a673a34eabe2",
+      "# expo-structured-headers\n\nJava and Objective-C (partial) implementations of https://httpwg.org/specs/rfc8941.html.\n\nThe Objective-C implementation only includes the parsing component and does not include serialization. It also ignores ordering of dictionaries.\n\nThe Java implementation is a derivative of https://github.com/reschke/structured-fields, modified for Android API level 21 compatibility and with the package name in each source file changed.\n\n## API documentation\n\n## Installation in managed Expo projects\n\n## Installation in bare React Native projects\n\n## Contributing\n\nContributions are very welcome! Please refer to guidelines described in the [contributing guide](https://github.com/expo/expo#contributing).\n"
+    ],
+    [
       "9a5af6a4b48868c4",
       "<!-- Title -->\n\n<p align=\"center\">\n  <a href=\"https://expo.dev/\">\n    <img alt=\"Expo CLI\" src=\"../../../.github/resources/cli-banner.svg\">\n  </a>\n</p>\n\n<p align=\"center\">The fastest way to build and run universal React Native apps for Android, iOS, and the web</p>\n\n<p align=\"center\">\n  <a aria-label=\"expo documentation\" href=\"https://docs.expo.dev/more/expo-cli/\">📚 Read the Documentation</a>\n  &ensp;•&ensp;\n  <a aria-label=\"expo documentation\" href=\"https://expo.dev/blog\">Learn more on our blog</a>\n  &ensp;•&ensp;\n  <a aria-label=\"Contribute to Expo CLI\" href=\"#contributing\">Contribute to Expo CLI</a>\n</p>\n\n<p align=\"center\">\n  <a aria-label=\"Join the Expo Discord\" href=\"https://discord.gg/4gtbPAdpaE\" target=\"_blank\">\n    <img alt=\"Discord\" src=\"https://img.shields.io/discord/695411232856997968.svg?style=for-the-badge&color=5865F2&logo=discord&logoColor=FFFFFF\" />\n  </a>\n</p>\n\n<p align=\"center\">\n  <a aria-label=\"Follow @expo on X\" href=\"https://x.com/intent/follow?screen_name=expo\" target=\"_blank\">\n    <img alt=\"Expo on X\" src=\"https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white\" target=\"_blank\" />\n  </a>&nbsp;\n  <a aria-label=\"Follow @expo on GitHub\" href=\"https://github.com/expo\" target=\"_blank\">\n    <img alt=\"Expo on GitHub\" src=\"https://img.shields.io/badge/GitHub-222222?style=for-the-badge&logo=github&logoColor=white\" target=\"_blank\" />\n  </a>&nbsp;\n  <a aria-label=\"Follow @expo on Reddit\" href=\"https://www.reddit.com/r/expo/\" target=\"_blank\">\n    <img alt=\"Expo on Reddit\" src=\"https://img.shields.io/badge/Reddit-FF4500?style=for-the-badge&logo=reddit&logoColor=white\" target=\"_blank\" />\n  </a>&nbsp;\n  <a aria-label=\"Follow @expo on Bluesky\" href=\"https://bsky.app/profile/expo.dev\" target=\"_blank\">\n    <img alt=\"Expo on LinkedIn\" src=\"https://img.shields.io/badge/Bluesky-1DA1F2?style=for-the-badge&logo=bluesky&logoColor=white\" target=\"_blank\" />\n  </a>&nbsp;\n  <a aria-label=\"Follow @expo on LinkedIn\" href=\"https://www.linkedin.com/company/expo-dev\" target=\"_blank\">\n    <img alt=\"Expo on LinkedIn\" src=\"https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=LinkedIn&logoColor=white\" target=\"_blank\" />\n  </a>\n\n  <p align=\"center\">⭐️ Be sure to star the Expo GitHub repo if you enjoy using the project! ⭐️</p>\n</p>\n\n---\n\nThe `@expo/cli` package is a CLI binary that should be used via the `expo` package, like `npx expo start` (or `npx expo` for short).\n\n```\nnpx expo\n```\n\n> ⭐️ Be sure to star the Expo GitHub repo if you enjoy using the project!\n\n## Design\n\nThis CLI has the following purposes:\n\n- Be a minimal interface for starting a local development server that emulates a production EAS Updates server. The development server is the proxy between a native runtime (Expo Go, Dev Client) and a JS Bundler (Metro, Webpack).\n  - To accomplish secure manifest signing for the web, like AsyncStorage or Permissions where both require https/SSL, we need an authenticated Expo account. This is the only reason we include the authentication commands `login`, `logout`, `whoami`, `register`. Standard web CLIs don't have authentication commands because they either don't set up https or they use emulation via packages like `devcert`.\n- Orchestrating various native tools like Xcode, `Simulator.app`, Android Studio, ADB, etc. to make native builds as painless as possible. `run:ios`, `run:android` commands.\n- Implementing a versioned `prebuild` command that can reliably work with a project for long periods of time. Prebuild is like a bundler for native code, it generates the **android** and **ios** folders based on the project Expo config (**app.json**).\n  - `npx expo config` is auxiliary to `npx expo prebuild` and used for debugging/introspection.\n- Installing versioned libraries with `npx expo install` this is a minimal utility born out of pure necessity since versioning in React Native is hard to get right.\n\n# Contributing\n\nTo develop the CLI run (defaults to watch mode):\n\n```\nyarn build\n```\n\nWe highly recommend setting up an alias for the Expo CLI so you can try it in projects all around your computer. Open your **.zshrc** or other config file and add:\n\n```\nalias nexpo=\"/path/to/expo/packages/@expo/cli/build/bin/cli\"\n```\n\nThen use it with `nexpo` like `nexpo config`. You can also set up a debug version:\n\n```\nalias expo-inspect=\"node --inspect /path/to/expo/packages/@expo/cli/build/bin/cli\"\n```\n\nThen you can run it and visit `chrome://inspect/#devices` in Chrome, and press **\"Open dedicated DevTools for Node\"** to get a debugger attached to your process. When debugging the CLI, you'll want to disable workers whenever possible, this will make all code run on the same thread, this is mostly applicable to the `start` command, i.e. `expo-inspect start --max-workers 0`.\n\n## Format\n\n- Be sure to update the [`CHANGELOG.md`](./CHANGELOG.md) with changes for every PR. You only need to add the message, our GitHub bot will automatically suggest adding your name and PR number to the diff.\n- End `async` functions with `Async` like `runAsync`. This is just how we format functions at Expo.\n- When throwing errors, always opt for `CommandError` instead of `Error` -- this helps with debugging and making the experience feel more coherent.\n- Utilize the unified `Log` module instead of `console.log`.\n- When logging with variables, utilize the following format `Something happened (foo: bar, baz: foz)`.\n  - Avoid other formats like `Something happened: bar, foz` or `Something happened: foo=bar, baz=foz`.\n- Main UI components like command names (`expo start`), arguments (`--port`), and `--help` messages should be modified internally, by the Expo team to ensure the developer experience is unified across Expo tooling. External contributions modifying these core aspects may be rejected.\n- Use the `profile` utility method with the `EXPO_PROFILE=1` environment variable to measure execution time.\n- Avoid globals and singletons as these make testing harder and less predictable. The only global we have (at the time of writing this) is the `isOffline` boolean.\n\n## Environment\n\n- Always be cautious of the transitive size of dependencies. [packagephobia](https://packagephobia.now.sh/) is a great resource for determining if a package is lean. Try to minimize adding dependencies to the CLI.\n- We build the CLI using `taskr` + `swc`, this is partially inspired by Next.js' local CLI.\n- The build pipeline will inline the CLI version as an environment variable that is accessible anywhere in the CLI codebase. You can access it via `process.env.__EXPO_VERSION` instead of reading the local `package.json` at runtime.\n- Unlike the legacy global Expo CLI, this CLI is shipped with `expo` meaning the SDK Version is always present.\n  - Reduce SDK specific tasks since only one SDK should be accounted for in a single version of `@expo/cli`.\n  - The `@expo/config` method `getConfig` does not need the `skipSDKVersionRequirement` in any case since `expo` should always be installed. Ex: `getConfig('...', { skipSDKVersionRequirement: true });` shouldn't be used.\n- Also unlike the global Expo CLI we can assume that node modules are always installed since this CLI should be used via a project's local **node_modules** folder.\n  - This means we can't perform operations that upgrade the `expo` package as these may kill the running process. Features that need this pattern (like `expo upgrade`) should live in standalone global tools.\n\n## Testing\n\nThere are two testing scripts:\n\n- `yarn test`: Controlled unit and integration tests.\n- `yarn test:e2e`: End to end testing for CLI commands. This requires the files to be built with `yarn build`.\n\n---\n\n- You can target a specific set of tests with the `--watch` flag. Example: `yarn test --watch config`.\n- We use backticks for `it` blocks. Example <code>it(`works`)</code>.\n- If a pull request is fully self-contained to the `packages/@expo/cli/` folder (i.e. no `yarn.lock` modifications, etc.) then most native CI tests will be skipped, making CI pass faster in PRs.\n\n### Unit Testing Guidelines\n\n- Use `nock` for network requests.\n- No top level `describe` blocks that wrap all the tests in a file.\n- When testing a function, pass the function to the `describe` block instead of a stringified function name:\n  - `describe(foobar, () => {})` instead of `describe('foobar', () => {})`\n- Use virtual `fs` via `memfs` whenever possible.\n- We have a lot of global module [**mocks**](./e2e/setup.ts) already in place, consider them when writing tests.\n- GitHub Copilot can make writing tests a little less tedious.\n\n### E2E Testing Guidelines\n\n- E2E tests should be resilient and reliable, be sure to give them plenty of time for network requests.\n- When testing locally you had to have [Bun installed](https://bun.sh/docs/installation).\n- When testing locally you should attempt to reuse node modules for faster results. In the `npx expo prebuild` and `npx expo start` commands for instance, we utilize a helper method that will default to reusing a project + **node_modules** when run locally. This can be [toggled off](https://github.com/expo/expo/blob/11a5a4d27b7e1c8e4d6ddf0401397d789d89f52a/packages/%40expo/cli/e2e/__tests__/utils.ts#L174) to bootstrap a fresh project every time.\n- When bootstrapping test projects, utilize the temporary folder `os.tmpdir()` as this folder is automatically cleaned up when the computer restarts.\n\n## Coming from Expo CLI\n\n> TL;DR: `expo-cli` was 'make it work', whereas `@expo/cli` is 'make it right, make it fast'.\n\nThe legacy global `expo-cli` package was deprecated in favor of this versioned `@expo/cli` package for the following reasons:\n\n- `expo-cli` was too big and took way too long to install. This made CI frustrating to set up since you needed to also target global node modules for caching.\n- `expo-cli` worked for almost all versions of the `expo` package, meaning it was getting more complex with every release.\n- `expo-cli` combined service commands (like the legacy `build`, `submit`, `publish`) with project-level commands like `expo start`. We've since divided services into `eas-cli` and project commands into `npx expo` (`@expo/cli`). This structure is more optimal/faster for developers since they can install/update commands when they need them.\n- This CLI utilizes more Node.js standard features like `$EDITOR` instead of the custom `$EXPO_EDITOR` environment variable. Also transitioning away from `$EXPO_DEBUG` and more towards `$DEBUG=expo:*`. These types of changes make Expo CLI play nicer with existing tooling.\n- The DevTools UI has been deprecated to reduce the net installation size, minimize complexity, and make room for future debugging UIs (Hermes/v8 Chrome debugger).\n- The `expo start:web` and `expo web` commands have been rolled into `npx expo start` as we now lazily load platforms until the device requests them.\n- Other missing or beta features from `expo-cli` may still be getting migrated over to this new CLI. For a more comprehensive breakdown see the [start command PR](https://github.com/expo/expo/pull/16160).\n"
     ],
@@ -4793,6 +4785,10 @@
       "(The MIT License)\n\nCopyright (c) 2013 Jonathan Ong <me@jongleberry.com>\nCopyright (c) 2014 Jeremiah Senkpiel <fishrock123@rocketmail.com>\nCopyright (c) 2015 Douglas Christopher Wilson <doug@somethingdoug.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n'Software'), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
     ],
     [
+      "b83b83f23caca2fe",
+      "<p>\n  <a href=\"https://docs.expo.dev/versions/latest/sdk/updates/\">\n    <img\n      src=\"../../.github/resources/expo-updates.svg\"\n      alt=\"expo-updates\"\n      height=\"64\" />\n  </a>\n</p>\n\nThe `expo-updates` module enables your app to manage remote updates to your application code.\n\nThis module works with a server that implements the [Expo Update protocol](https://docs.expo.dev/technical-specs/expo-updates-1/).\n\nThe [EAS Update](https://docs.expo.dev/eas-update/introduction/) hosted service implements this protocol.\n\nTo build a custom server that implements the protocol, see the example server source code [here](https://github.com/expo/custom-expo-updates-server).\n\n## Important documentation links\n\n- [Getting started](https://docs.expo.dev/eas-update/getting-started/)\n- [How EAS Update works](https://docs.expo.dev/eas-update/how-it-works/)\n- [Debugging](https://docs.expo.dev/eas-update/debug/)\n- [Migration from Classic Updates](https://docs.expo.dev/eas-update/migrate-from-classic-updates/)\n- [Updates JS API](https://docs.expo.dev/versions/latest/sdk/updates/)\n\n# Installation in bare React Native projects\n\nLearn how to install expo-updates in your project in the [Installing expo-updates documentation page](https://docs.expo.dev/bare/installing-updates/).\n"
+    ],
+    [
       "b8618a83ae274f87",
       "# expo-system-ui\n\n**`expo-system-ui`** adds support for locking the user interface (appearance) and updating the root view background color.\n\n## API documentation\n\n- [Documentation for the latest stable release][docs-stable]\n- [Documentation for the main branch][docs-main]\n\n### Installation\n\n```\nnpx expo install expo-system-ui\n```\n\n### Extra Setup\n\nFor bare React Native projects, ensure that you have the [native `expo` package][expo-modules] setup before continuing, this is required for all Expo modules.\n\n## Contributing\n\nContributions are very welcome! Please refer to guidelines described in the [contributing guide][contributing].\n\n[docs-main]: https://docs.expo.dev/versions/unversioned/sdk/system-ui/\n[docs-stable]: https://docs.expo.dev/versions/latest/sdk/system-ui/\n[contributing]: https://github.com/expo/expo#contributing\n[expo-modules]: https://docs.expo.dev/bare/installing-expo-modules/\n"
     ],
@@ -4815,6 +4811,10 @@
     [
       "bd54a6ab4e3ad0f7",
       "Copyright (C) 2014-2016 Kevin Beaty\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+    ],
+    [
+      "beaa6b04fb82e41d",
+      "The MIT License (MIT)\n\nCopyright (c) 2010-2020 Robert Kieffer and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
     ],
     [
       "bf9b0d665be2a689",
@@ -4843,10 +4843,6 @@
     [
       "c43b99fc682391ce",
       "The MIT License (MIT)\n\nCopyright (c) 2012-2018 various contributors (see AUTHORS)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
-    ],
-    [
-      "c4630ac8b89cb317",
-      "The MIT License (MIT)\n\nCopyright 2013 Andrey Sitnik <andrey@sitnik.ru>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
     ],
     [
       "c51452ef1dfd5606",
