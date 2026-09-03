@@ -2,7 +2,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { router } from 'expo-router';
 import Constants from 'expo-constants';
 import { useCallback, useEffect, useState } from 'react';
-import { Alert, Appearance, Modal, Pressable, ScrollView, StyleSheet, Switch, View } from 'react-native';
+import { Alert, Appearance, Linking, Modal, Pressable, ScrollView, StyleSheet, Switch, View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { ClockFormat } from '@/types';
@@ -155,6 +155,15 @@ export default function SettingsScreen() {
             {Constants.expoConfig?.version ?? '—'}
           </ThemedText>
         </View>
+        <Pressable
+          style={[styles.row, { backgroundColor: card }]}
+          onPress={() => void Linking.openURL('https://www.ritrek.com/privacy-policy-btc-alarm-clock-android.txt')}
+          accessibilityRole="link"
+          accessibilityLabel="Privacy policy"
+        >
+          <ThemedText>Privacy Policy</ThemedText>
+          <Ionicons name="open-outline" size={18} color={muted} />
+        </Pressable>
         <Pressable
           style={[styles.row, { backgroundColor: card }]}
           onPress={() => router.push('/licenses')}
