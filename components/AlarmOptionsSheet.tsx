@@ -151,18 +151,19 @@ export default function AlarmOptionsSheet({ alarm, visible, onClose, openTimePic
       <GestureHandlerRootView style={styles.modalRoot}>
       <View style={styles.backdrop}>
         <Pressable style={StyleSheet.absoluteFill} onPress={handleClose} accessibilityLabel="Dismiss" />
-        <GestureDetector gesture={pan}>
-          <Animated.View
-            style={[
-              styles.sheet,
-              sheetMotion,
-              { backgroundColor: card, paddingBottom: Math.max(insets.bottom, 16) },
-            ]}
-          >
-            <View style={styles.handleHit} accessibilityLabel="Swipe down to dismiss">
+        <Animated.View
+          style={[
+            styles.sheet,
+            sheetMotion,
+            { backgroundColor: card, paddingBottom: Math.max(insets.bottom, 16) },
+          ]}
+        >
+          <GestureDetector gesture={pan}>
+            <View style={styles.handleHit} accessibilityLabel="Swipe down to dismiss" collapsable={false}>
               <View style={[styles.handle, { backgroundColor: muted }]} />
             </View>
-            <ScrollView
+          </GestureDetector>
+          <ScrollView
             keyboardShouldPersistTaps="handled"
             bounces={false}
             contentContainerStyle={styles.sheetContent}
@@ -238,8 +239,7 @@ export default function AlarmOptionsSheet({ alarm, visible, onClose, openTimePic
               <ThemedText style={{ color: '#c62828' }}>Delete</ThemedText>
             </Pressable>
             </ScrollView>
-          </Animated.View>
-        </GestureDetector>
+        </Animated.View>
       </View>
       </GestureHandlerRootView>
     </Modal>
@@ -263,8 +263,8 @@ const styles = StyleSheet.create({
   sheetContent: { gap: 12, paddingBottom: 8 },
   handleHit: {
     alignItems: 'center',
-    paddingTop: 4,
-    paddingBottom: 12,
+    paddingTop: 8,
+    paddingBottom: 16,
   },
   handle: {
     width: 36,
