@@ -97,12 +97,12 @@ export default function SettingsScreen() {
           );
         })}
 
-        <ThemedText type="subtitle">Snooze Time</ThemedText>
+        <ThemedText type="subtitle">Snooze time</ThemedText>
         <Pressable
           style={[styles.row, styles.snoozeTrigger, { backgroundColor: card }]}
           onPress={() => setSnoozeOpen(true)}
           accessibilityRole="button"
-          accessibilityLabel="Snooze Time"
+          accessibilityLabel="Snooze time"
         >
           <ThemedText>{snoozeLabel(settings.snoozeMinutes)}</ThemedText>
           <View style={styles.snoozeChevron} pointerEvents="none">
@@ -177,7 +177,7 @@ export default function SettingsScreen() {
           <Pressable style={StyleSheet.absoluteFill} onPress={() => setSnoozeOpen(false)} />
           <View style={[styles.dialog, { backgroundColor: card }]} accessibilityViewIsModal>
             <ThemedText type="subtitle" style={styles.dialogTitle}>
-              Snooze Time
+              Snooze time
             </ThemedText>
             {SNOOZE_OPTIONS.map((minutes) => {
               const selected = settings.snoozeMinutes === minutes;
