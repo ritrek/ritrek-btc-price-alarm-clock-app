@@ -52,12 +52,24 @@ export default function SettingsScreen() {
     <ThemedView style={styles.container}>
       <ScrollView contentContainerStyle={styles.content}>
         <ThemedText type="subtitle">Appearance</ThemedText>
-        {(['system', 'light', 'dark'] as const).map((option) => (
-          <Pressable key={option} style={[styles.row, { backgroundColor: card }]} onPress={() => applyTheme(option)}>
-            <ThemedText style={{ textTransform: 'capitalize' }}>{option}</ThemedText>
-            {theme === option ? <ThemedText type="link">Selected</ThemedText> : null}
-          </Pressable>
-        ))}
+        {(['system', 'light', 'dark'] as const).map((option) => {
+          const selected = theme === option;
+          return (
+            <Pressable
+              key={option}
+              style={[
+                styles.row,
+                styles.choiceRow,
+                { backgroundColor: card, borderColor: selected ? tint : 'transparent' },
+              ]}
+              onPress={() => applyTheme(option)}
+              accessibilityRole="radio"
+              accessibilityState={{ selected }}
+            >
+              <ThemedText style={{ textTransform: 'capitalize' }}>{option}</ThemedText>
+            </Pressable>
+          );
+        })}
 
         <ThemedText type="subtitle">Clock</ThemedText>
         {(
@@ -66,16 +78,24 @@ export default function SettingsScreen() {
             { id: '12h' as ClockFormat, label: '12-hour (AM/PM)' },
             { id: '24h' as ClockFormat, label: '24-hour' },
           ]
-        ).map((option) => (
-          <Pressable
-            key={option.id}
-            style={[styles.row, { backgroundColor: card }]}
-            onPress={() => void setClockFormat(option.id)}
-          >
-            <ThemedText>{option.label}</ThemedText>
-            {clockFormat === option.id ? <ThemedText type="link">Selected</ThemedText> : null}
-          </Pressable>
-        ))}
+        ).map((option) => {
+          const selected = clockFormat === option.id;
+          return (
+            <Pressable
+              key={option.id}
+              style={[
+                styles.row,
+                styles.choiceRow,
+                { backgroundColor: card, borderColor: selected ? tint : 'transparent' },
+              ]}
+              onPress={() => void setClockFormat(option.id)}
+              accessibilityRole="radio"
+              accessibilityState={{ selected }}
+            >
+              <ThemedText>{option.label}</ThemedText>
+            </Pressable>
+          );
+        })}
 
         <ThemedText type="subtitle">Snooze Time</ThemedText>
         <Pressable
@@ -260,6 +280,9 @@ const styles = StyleSheet.create({
   },
   rowLabel: {
     flex: 1,
+  },
+  choiceRow: {
+    borderWidth: 2,
   },
   snoozeTrigger: {
     justifyContent: 'center',
