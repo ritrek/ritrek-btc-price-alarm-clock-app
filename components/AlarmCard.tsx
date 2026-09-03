@@ -209,12 +209,12 @@ export default function AlarmCard({ alarm, onToggle }: Props) {
                 ) : null}
                 {alarm.nguSoundId ? (
                   <ThemedText style={[styles.detail, { color: muted }]} numberOfLines={1}>
-                    Number Go Up Sound · {soundTitle(alarm.nguSoundId, userSounds)}
+                    Number Go Up Sound: {soundTitle(alarm.nguSoundId, userSounds)}
                   </ThemedText>
                 ) : null}
                 {alarm.ngdSoundId ? (
                   <ThemedText style={[styles.detail, { color: muted }]} numberOfLines={1}>
-                    Number Go Down Sound · {soundTitle(alarm.ngdSoundId, userSounds)}
+                    Number Go Down Sound: {soundTitle(alarm.ngdSoundId, userSounds)}
                   </ThemedText>
                 ) : null}
               </PressableView>
