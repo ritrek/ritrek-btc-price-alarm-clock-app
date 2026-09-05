@@ -1,4 +1,3 @@
-import { useThemeColor } from '@/hooks/useThemeColor';
 import { useCallback } from 'react';
 import { Pressable, StyleProp, ViewStyle } from 'react-native';
 
@@ -11,14 +10,11 @@ interface PressableViewProps {
 }
 
 export default function PressableView({ children, style, onPress, accessibilityLabel, disabled }: PressableViewProps) {
-  const tintColor = useThemeColor({}, 'tint');
-
   const pressableStyle = useCallback(({ pressed }: { pressed: boolean }) => {
     return {
       opacity: pressed ? 0.8 : 1,
-      backgroundColor: pressed ? `${tintColor}20` : 'transparent',
     };
-  }, [tintColor]);
+  }, []);
 
   return (
     <Pressable
