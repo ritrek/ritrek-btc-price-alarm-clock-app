@@ -70,7 +70,8 @@
         }
       ],
       "./modules/btc-alarm/app.plugin.js",
-      "./plugins/withDisablePredictiveBack.js"
+      "./plugins/withDisablePredictiveBack.js",
+      "./plugins/withForceLtr.js"
     ],
     "experiments": {
       "typedRoutes": true

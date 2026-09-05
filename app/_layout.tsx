@@ -2,12 +2,15 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Stack, useRouter, useSegments } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
-import { Appearance, BackHandler } from 'react-native';
+import { Appearance, BackHandler, I18nManager } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 import { AppProvider } from '@/context/AppContext';
 import { useThemeColor } from '@/hooks/useThemeColor';
 import { useColorScheme } from '@/hooks/useColorScheme';
+
+I18nManager.allowRTL(false);
+I18nManager.forceRTL(false);
 
 function AndroidStackBackHandler() {
   const router = useRouter();
@@ -44,7 +47,7 @@ export default function RootLayout() {
   const scheme = useColorScheme();
 
   return (
-    <GestureHandlerRootView style={{ flex: 1, backgroundColor }}>
+    <GestureHandlerRootView style={{ flex: 1, backgroundColor, direction: 'ltr' }}>
       <AppProvider>
         <AndroidStackBackHandler />
         <StatusBar style={scheme === 'dark' ? 'light' : 'dark'} />
