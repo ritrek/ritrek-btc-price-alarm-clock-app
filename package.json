@@ -1,7 +1,7 @@
 {
   "name": "btc-price-alarm-clock",
   "main": "expo-router/entry",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": true,
   "license": "MIT",
   "author": "RITREK Ltd.",
