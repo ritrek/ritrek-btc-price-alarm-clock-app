@@ -19,6 +19,9 @@ export function ThemedText({
 
   return (
     <Text
+      {...rest}
+      allowFontScaling={false}
+      maxFontSizeMultiplier={1}
       style={[
         { color },
         type === 'default' ? styles.default : undefined,
@@ -28,7 +31,6 @@ export function ThemedText({
         type === 'link' ? styles.link : undefined,
         style,
       ]}
-      {...rest}
     />
   );
 }

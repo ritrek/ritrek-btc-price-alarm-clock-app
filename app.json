@@ -71,7 +71,8 @@
       ],
       "./modules/btc-alarm/app.plugin.js",
       "./plugins/withDisablePredictiveBack.js",
-      "./plugins/withForceLtr.js"
+      "./plugins/withForceLtr.js",
+      "./plugins/withFixedFontScale.js"
     ],
     "experiments": {
       "typedRoutes": true

@@ -87,13 +87,13 @@ export default function LicensesScreen() {
         style={[styles.licenseCard, { backgroundColor: cardColor }]}
       >
         <View style={styles.licenseCardContent}>
-          <Text style={[styles.packageName, { color: textColor }]} numberOfLines={1}>
+          <Text allowFontScaling={false} maxFontSizeMultiplier={1} style={[styles.packageName, { color: textColor }]} numberOfLines={1}>
             {item.packageName}
           </Text>
-          <Text style={[styles.packageVersion, { color: textColor }]}>
+          <Text allowFontScaling={false} maxFontSizeMultiplier={1} style={[styles.packageVersion, { color: textColor }]}>
             {item.version}
           </Text>
-          <Text style={[styles.licenseType, { color: tintColor }]}>
+          <Text allowFontScaling={false} maxFontSizeMultiplier={1} style={[styles.licenseType, { color: tintColor }]}>
             {item.licenses}
           </Text>
         </View>
@@ -108,8 +108,8 @@ export default function LicensesScreen() {
   const renderListHeader = useCallback(
     () => (
       <View style={[styles.card, { backgroundColor }]}>
-        <Text style={[styles.cardTitle, { color: textColor }]}>Dependencies licenses</Text>
-        <Text style={[styles.description, { color: textColor }]}>
+        <Text allowFontScaling={false} maxFontSizeMultiplier={1} style={[styles.cardTitle, { color: textColor }]}>Dependencies licenses</Text>
+        <Text allowFontScaling={false} maxFontSizeMultiplier={1} style={[styles.description, { color: textColor }]}>
           This app uses the following dependency packages. Tap on any dependency to view its license.
         </Text>
       </View>
@@ -120,7 +120,7 @@ export default function LicensesScreen() {
   const renderListEmpty = useCallback(
     () => (
       <View style={[styles.card, { backgroundColor: cardColor }]}>
-        <Text style={[styles.errorText, { color: textColor }]}>
+        <Text allowFontScaling={false} maxFontSizeMultiplier={1} style={[styles.errorText, { color: textColor }]}>
           No license data found.
         </Text>
       </View>
@@ -165,7 +165,7 @@ export default function LicensesScreen() {
             <Pressable onPress={closeModal} style={styles.closeButton}>
               <Ionicons name="close" size={24} color={textColor} />
             </Pressable>
-            <Text style={[styles.modalTitle, { color: textColor }]}>
+            <Text allowFontScaling={false} maxFontSizeMultiplier={1} style={[styles.modalTitle, { color: textColor }]}>
               {selectedLicense?.packageName}
             </Text>
             <View style={styles.closeButton} />
@@ -178,42 +178,42 @@ export default function LicensesScreen() {
             {selectedLicense && (
               <>
                 <View style={[styles.modalInfoCard, { backgroundColor: cardColor }]}>
-                  <Text style={[styles.modalInfoLabel, { color: textColor }]}>Version</Text>
-                  <Text style={[styles.modalInfoValue, { color: textColor }]}>
+                  <Text allowFontScaling={false} maxFontSizeMultiplier={1} style={[styles.modalInfoLabel, { color: textColor }]}>Version</Text>
+                  <Text allowFontScaling={false} maxFontSizeMultiplier={1} style={[styles.modalInfoValue, { color: textColor }]}>
                     {selectedLicense.version}
                   </Text>
                 </View>
                 <View style={[styles.modalInfoCard, { backgroundColor: cardColor }]}>
-                  <Text style={[styles.modalInfoLabel, { color: textColor }]}>License</Text>
-                  <Text style={[styles.modalInfoValue, { color: textColor }]}>
+                  <Text allowFontScaling={false} maxFontSizeMultiplier={1} style={[styles.modalInfoLabel, { color: textColor }]}>License</Text>
+                  <Text allowFontScaling={false} maxFontSizeMultiplier={1} style={[styles.modalInfoValue, { color: textColor }]}>
                     {selectedLicense.licenses}
                   </Text>
                 </View>
                 {selectedLicense.repository && (
                   <View style={[styles.modalInfoCard, { backgroundColor: cardColor }]}>
-                    <Text style={[styles.modalInfoLabel, { color: textColor }]}>Repository</Text>
-                    <Text style={[styles.modalInfoValue, { color: textColor }]} numberOfLines={2}>
+                    <Text allowFontScaling={false} maxFontSizeMultiplier={1} style={[styles.modalInfoLabel, { color: textColor }]}>Repository</Text>
+                    <Text allowFontScaling={false} maxFontSizeMultiplier={1} style={[styles.modalInfoValue, { color: textColor }]} numberOfLines={2}>
                       {selectedLicense.repository}
                     </Text>
                   </View>
                 )}
                 {selectedLicense.licenseText ? (
                   <View style={[styles.modalLicenseCard, { backgroundColor: cardColor }]}>
-                    <Text style={[styles.modalLicenseTitle, { color: textColor }]}>
+                    <Text allowFontScaling={false} maxFontSizeMultiplier={1} style={[styles.modalLicenseTitle, { color: textColor }]}>
                       License text
                     </Text>
                     <ScrollView
                       style={styles.licenseTextScrollView}
                       contentContainerStyle={styles.licenseTextContent}
                     >
-                      <Text style={[styles.licenseText, { color: textColor }]}>
+                      <Text allowFontScaling={false} maxFontSizeMultiplier={1} style={[styles.licenseText, { color: textColor }]}>
                         {selectedLicense.licenseText}
                       </Text>
                     </ScrollView>
                   </View>
                 ) : (
                   <View style={[styles.modalLicenseCard, { backgroundColor: cardColor }]}>
-                    <Text style={[styles.noLicenseText, { color: textColor }]}>
+                    <Text allowFontScaling={false} maxFontSizeMultiplier={1} style={[styles.noLicenseText, { color: textColor }]}>
                       License text not available. Please check the package repository for the full license.
                     </Text>
                   </View>
