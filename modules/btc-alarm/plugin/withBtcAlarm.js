@@ -170,6 +170,15 @@ function withBtcAlarmSounds(config) {
           fs.copyFileSync(fallback, path.join(rawDir, 'fallback_chime.mp3'));
         }
       }
+      fs.writeFileSync(
+        path.join(rawDir, 'keep.xml'),
+        [
+          '<?xml version="1.0" encoding="utf-8"?>',
+          '<resources xmlns:tools="http://schemas.android.com/tools"',
+          '    tools:keep="@raw/*" />',
+          '',
+        ].join('\n')
+      );
       return config;
     },
   ]);

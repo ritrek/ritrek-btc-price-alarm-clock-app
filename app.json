@@ -65,14 +65,17 @@
             "minSdkVersion": 26,
             "compileSdkVersion": 36,
             "targetSdkVersion": 36,
-            "buildToolsVersion": "36.0.0"
+            "buildToolsVersion": "36.0.0",
+            "enableProguardInReleaseBuilds": true,
+            "enableShrinkResourcesInReleaseBuilds": true
           }
         }
       ],
       "./modules/btc-alarm/app.plugin.js",
       "./plugins/withDisablePredictiveBack.js",
       "./plugins/withForceLtr.js",
-      "./plugins/withFixedFontScale.js"
+      "./plugins/withFixedFontScale.js",
+      "./plugins/withR8Release.js"
     ],
     "experiments": {
       "typedRoutes": true
