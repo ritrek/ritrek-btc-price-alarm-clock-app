@@ -1,4 +1,5 @@
 import { Ionicons } from '@expo/vector-icons';
+import { router } from 'expo-router';
 import React, { useCallback, useMemo, useState } from 'react';
 import { FlatList, Modal, Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -104,14 +105,31 @@ export default function LicensesScreen() {
 
   const renderListHeader = useCallback(
     () => (
-      <View style={styles.listHeader}>
-        <ThemedText type="subtitle">Dependencies licenses</ThemedText>
-        <ThemedText style={styles.description}>
-          This app uses the following dependency packages. Tap on any dependency to view its license.
-        </ThemedText>
+      <View>
+        <PressableView
+          onPress={() => router.push('/sound-licenses')}
+          style={[styles.licenseCard, { backgroundColor: cardColor }]}
+          accessibilityLabel="Bundled alarm recordings"
+        >
+          <View style={styles.licenseCardContent}>
+            <ThemedText type="defaultSemiBold" style={styles.packageName}>
+              Bundled alarm recordings
+            </ThemedText>
+            <ThemedText style={styles.packageVersion}>
+              Public domain, CC0, CC BY-SA, and U.S. government works
+            </ThemedText>
+          </View>
+          <Ionicons name="chevron-forward" size={20} color={textColor} style={styles.chevron} />
+        </PressableView>
+        <View style={styles.listHeader}>
+          <ThemedText type="subtitle">Dependencies licenses</ThemedText>
+          <ThemedText style={styles.description}>
+            This app uses the following dependency packages. Tap on any dependency to view its license.
+          </ThemedText>
+        </View>
       </View>
     ),
-    [],
+    [cardColor, textColor],
   );
 
   const renderListEmpty = useCallback(
@@ -231,6 +249,7 @@ const styles = StyleSheet.create({
   },
   listHeader: {
     gap: 8,
+    marginTop: 20,
     marginBottom: 16,
   },
   description: {

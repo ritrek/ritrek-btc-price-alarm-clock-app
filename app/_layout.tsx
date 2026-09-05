@@ -62,6 +62,7 @@ export default function RootLayout() {
           <Stack.Screen name="index" options={{ title: 'BTC Alarm Clock' }} />
           <Stack.Screen name="settings" options={{ title: 'Settings' }} />
           <Stack.Screen name="licenses" options={{ title: 'Licenses' }} />
+          <Stack.Screen name="sound-licenses" options={{ title: 'Alarm recordings' }} />
           <Stack.Screen
             name="alarm/[id]"
             options={{ title: 'Alarm', presentation: 'modal' }}
