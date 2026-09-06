@@ -212,8 +212,8 @@ export default function HomeScreen() {
                 </ThemedText>
               </ThemedText>
               <ThemedText style={[styles.aboutPitch, { color: muted }]}>
-                One day, you won’t wake up again. Don’t leave your loved ones with cryptic instructions
-                and passphrases. With the{' '}
+                If one day you no longer wake up, the people you love shouldn’t be left hunting for
+                passphrases and cryptic instructions. The{' '}
                 <ThemedText
                   type="link"
                   style={styles.inlineLink}
@@ -225,10 +225,10 @@ export default function HomeScreen() {
                 >
                   RITREK Android App
                 </ThemedText>
-                , you can create pre-signed Timelock Recovery transactions they can use to move your
-                Bitcoin to their own wallet once a safety cancellation window has passed.
-                The configurable cancellation window (for example, 90 days) gives you time to stop
-                the transfer if it was initiated by mistake.
+                {' '}lets you create pre-signed Timelock Recovery transactions which they could use
+                in the future to move your Bitcoin into their own wallet.
+                You can set a safety cancellation window (for example, 90 days), so you have time
+                to cancel if the transfer was initiated by mistake.
               </ThemedText>
               <ThemedText style={[styles.aboutTagline, { color: muted }]}>
                 When Seeds Fail, RITREK Recovers.
