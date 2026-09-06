@@ -1,8 +1,8 @@
 import DateTimePicker, { DateTimePickerEvent } from '@react-native-community/datetimepicker';
-import { Modal, Pressable, ScrollView, StyleSheet, View, Alert } from 'react-native';
+import { Modal, StyleSheet, View, Alert } from 'react-native';
 import { router } from 'expo-router';
 import { useCallback, useEffect, useState } from 'react';
-import { Gesture, GestureDetector, GestureHandlerRootView } from 'react-native-gesture-handler';
+import { Gesture, GestureDetector, GestureHandlerRootView, Pressable } from 'react-native-gesture-handler';
 import Animated, { runOnJS, useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -101,7 +101,7 @@ export default function AlarmOptionsSheet({ alarm, visible, onClose, openTimePic
   }, [translateY, visible]);
 
   const pan = Gesture.Pan()
-    .activeOffsetY([16, 1_000])
+    .activeOffsetY(16)
     .failOffsetX([-32, 32])
     .onUpdate((event) => {
       translateY.value = Math.max(0, event.translationY);
@@ -151,23 +151,20 @@ export default function AlarmOptionsSheet({ alarm, visible, onClose, openTimePic
       <GestureHandlerRootView style={styles.modalRoot}>
       <View style={styles.backdrop}>
         <Pressable style={StyleSheet.absoluteFill} onPress={handleClose} accessibilityLabel="Dismiss" />
-        <Animated.View
-          style={[
-            styles.sheet,
-            sheetMotion,
-            { backgroundColor: card, paddingBottom: Math.max(insets.bottom, 16) },
-          ]}
-        >
-          <GestureDetector gesture={pan}>
-            <View style={styles.handleHit} accessibilityLabel="Swipe down to dismiss" collapsable={false}>
+        <GestureDetector gesture={pan}>
+          <Animated.View
+            style={[
+              styles.sheet,
+              sheetMotion,
+              { backgroundColor: card, paddingBottom: Math.max(insets.bottom, 16) },
+            ]}
+            accessibilityLabel="Swipe down to dismiss"
+            collapsable={false}
+          >
+            <View style={styles.handleHit}>
               <View style={[styles.handle, { backgroundColor: muted }]} />
             </View>
-          </GestureDetector>
-          <ScrollView
-            keyboardShouldPersistTaps="handled"
-            bounces={false}
-            contentContainerStyle={styles.sheetContent}
-          >
+            <View style={styles.sheetContent}>
             <Pressable
               onPress={() => setShowPicker(true)}
               accessibilityLabel="Change time"
@@ -238,8 +235,9 @@ export default function AlarmOptionsSheet({ alarm, visible, onClose, openTimePic
             >
               <ThemedText style={{ color: '#c62828' }}>Delete</ThemedText>
             </Pressable>
-            </ScrollView>
-        </Animated.View>
+            </View>
+          </Animated.View>
+        </GestureDetector>
       </View>
       </GestureHandlerRootView>
     </Modal>
