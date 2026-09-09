@@ -2,7 +2,7 @@ import { Audio } from 'expo-av';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import * as DocumentPicker from 'expo-document-picker';
 import * as FileSystem from 'expo-file-system';
-import { useLocalSearchParams } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import { useCallback, useEffect, useState } from 'react';
 import { Alert, Pressable, ScrollView, StyleSheet, View } from 'react-native';
 
@@ -202,6 +202,15 @@ export default function SoundsScreen() {
         >
           <Ionicons name="document-attach-outline" size={22} color={tint} />
           <ThemedText>Add sound from file…</ThemedText>
+        </Pressable>
+        <Pressable
+          onPress={() => router.push('/sound-licenses')}
+          accessibilityRole="link"
+          accessibilityLabel="Recording licenses and credits"
+        >
+          <ThemedText type="link" style={{ color: tint }}>
+            Recording licenses and credits
+          </ThemedText>
         </Pressable>
       </ScrollView>
     </ThemedView>

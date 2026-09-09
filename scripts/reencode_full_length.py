@@ -127,7 +127,9 @@ TRACKS: list[tuple[str, str, float | None, list[str]]] = [
         "beethoven_moonlight",
         None,
         [
-            "https://archive.org/download/SonataNo.14MoonlightOp.27No.2/Sonata%20No.%2014%20Moonlight%20-%20Op.%2027%2C%20No.%202%2C%201st%20movement.ogg",
+            commons_path(
+                "Ludwig van Beethoven - sonata no. 14 in c sharp minor 'moonlight', op. 27 no. 2 - i. adagio sostenuto.ogg"
+            ),
         ],
     ),
     (

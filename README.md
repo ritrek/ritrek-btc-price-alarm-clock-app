@@ -95,7 +95,7 @@ Shared in `utils/price.ts` (JS) and `modules/btc-alarm/.../PriceFetcher.kt` (nat
 
 ## Sounds
 
-Bundled NGU/NGD recordings are public-domain / CC works. Attribution is in [LICENSES.md](LICENSES.md).
+Bundled NGU/NGD recordings keep their own licenses (public domain, CC0, U.S. government work, or CC BY-SA). They are **not** MIT-licensed with the app source. Full credits, source links, and license URLs are in [LICENSES.md](LICENSES.md) and in the app under Settings → Licenses → Bundled alarm recordings.
 
 You can set app-wide defaults, override per alarm, or import a file from disk.
 
@@ -131,4 +131,4 @@ Profiles live in `eas.json`. Submit needs a Play Console app and a Google servic
 
 Copyright (c) 2026 [RITREK Ltd.](https://ritrek.com)
 
-The source code is licensed under the [MIT License](LICENSE). Bundled alarm recordings keep the licenses listed in [LICENSES.md](LICENSES.md).
+The source code is licensed under the [MIT License](LICENSE). Bundled alarm recordings are **not** MIT; they keep the licenses listed in [LICENSES.md](LICENSES.md).

@@ -116,7 +116,7 @@ export default function LicensesScreen() {
               Bundled alarm recordings
             </ThemedText>
             <ThemedText style={styles.packageVersion}>
-              Public domain, CC0, CC BY-SA, and U.S. government works
+              Credits, source links, and licenses for bundled MP3s
             </ThemedText>
           </View>
           <Ionicons name="chevron-forward" size={20} color={textColor} style={styles.chevron} />
