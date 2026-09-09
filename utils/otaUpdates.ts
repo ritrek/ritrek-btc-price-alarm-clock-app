@@ -9,7 +9,7 @@ export async function syncOtaUpdates(): Promise<void> {
     return;
   }
   try {
-    if (Updates.isUpdatePending) {
+    if (Updates.latestContext.isUpdatePending) {
       await Updates.reloadAsync();
       return;
     }
